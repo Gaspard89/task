@@ -1,2 +1,58 @@
+/*********************
+VARIABLES AND MIXINS
+*********************/
+h1 {
+  font-size: 2em; }
+
+h2 {
+  font-size: 1.5em; }
+
+h3 {
+  font-size: 1em; }
+
+h4 {
+  font-size: 0.5em; }
+
+h5 {
+  font-size: 0em; }
+
+h6 {
+  font-size: -0.5em; }
+
+/*********************
+BREAKPOINTS
+*********************/
+/*********************
+STYLES
+*********************/
 body {
-  background-color: #000000; }
+  margin: 0;
+  padding: 0;
+  background-color: #ffe1ad;
+  font-family: 'Montserrat', sans-serif; }
+
+a {
+  color: inherit; }
+
+/*********************
+header
+*********************/
+header {
+  min-height: 100px;
+  background-color: #ffffff;
+  position: fixed;
+  width: 100%; }
+  header .navigation {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto; }
+    header .navigation .questions {
+      display: inline-block; }
+      header .navigation .questions h1 {
+        display: inline-block; }
+      header .navigation .questions .fa {
+        color: #0266b3;
+        margin: 0 20px;
+        font-size: 2em; }
+    header .navigation .checkbox {
+      display: inline-block; }
