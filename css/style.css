@@ -29,10 +29,28 @@ body {
   margin: 0;
   padding: 0;
   background-color: #ffe1ad;
-  font-family: 'Montserrat', sans-serif; }
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  height: 100%; }
+
+html {
+  height: 100%; }
 
 a {
-  color: inherit; }
+  color: inherit;
+  text-decoration: none; }
+
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.ui-widget-content {
+  border: 1px solid #ddd;
+  background: #eee url("images/ui-bg_highlight-soft_100_eeeeee_1x100.png") 50% top repeat-x;
+  color: #333;
+  z-index: 999 !important;
+  position: fixed !important; }
 
 /*********************
 header
@@ -40,34 +58,71 @@ header
 header {
   background-color: #ffffff;
   position: fixed;
-  width: 100%; }
-  header .navigation, header .search {
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto; }
-    header .navigation .questions, header .search .questions {
-      display: inline-block; }
-      header .navigation .questions h1, header .search .questions h1 {
-        display: inline-block;
-        margin: 40px 0 20px 0; }
-      header .navigation .questions .fa, header .search .questions .fa {
+  width: 100%;
+  top: 0;
+  box-shadow: 0px 0 5px 0 rgba(0, 0, 0, 0.2);
+  z-index: 999; }
+  header .navigation .questions, header .search .questions {
+    display: inline-block; }
+    header .navigation .questions h1, header .search .questions h1 {
+      display: inline-block;
+      margin: 40px 0 20px 0; }
+    header .navigation .questions .fa, header .search .questions .fa {
+      color: #0266b3;
+      margin: 0 20px;
+      font-size: 2em; }
+  header .navigation .checkbox, header .search .checkbox {
+    height: 100px;
+    display: table;
+    float: right; }
+    header .navigation .checkbox ul, header .search .checkbox ul {
+      display: table-cell;
+      text-align: center;
+      vertical-align: bottom;
+      padding-bottom: 20px; }
+      header .navigation .checkbox ul li:nth-child(3) a, header .search .checkbox ul li:nth-child(3) a {
+        color: #b0b2b5;
+        border-bottom: 1px solid; }
+      header .navigation .checkbox ul li:nth-child(3):before, header .search .checkbox ul li:nth-child(3):before {
+        content: "Sort by:";
+        font-style: italic;
+        padding: 0 20px; }
+      header .navigation .checkbox ul li:nth-child(4) a, header .search .checkbox ul li:nth-child(4) a {
         color: #0266b3;
-        margin: 0 20px;
-        font-size: 2em; }
-    header .navigation .checkbox, header .search .checkbox {
-      height: 100px;
-      display: table;
-      float: right; }
-      header .navigation .checkbox ul, header .search .checkbox ul {
-        display: table-cell;
-        text-align: center;
-        vertical-align: bottom;
-        padding-bottom: 20px; }
-        header .navigation .checkbox ul .select-list, header .search .checkbox ul .select-list, header .navigation .checkbox ul .sort-list, header .search .checkbox ul .sort-list {
-          display: inline;
-          padding: 0 20px; }
-        header .navigation .checkbox ul .sort-list, header .search .checkbox ul .sort-list {
-          padding: 0 10px; }
+        font-weight: bold; }
+      header .navigation .checkbox ul li:nth-child(4):before, header .search .checkbox ul li:nth-child(4):before {
+        content: "or";
+        padding-right: 20px;
+        font-style: italic; }
+      header .navigation .checkbox ul .select-list, header .search .checkbox ul .select-list, header .navigation .checkbox ul .sort-list, header .search .checkbox ul .sort-list {
+        display: inline;
+        padding: 0 10px; }
+        header .navigation .checkbox ul .select-list label, header .search .checkbox ul .select-list label, header .navigation .checkbox ul .sort-list label, header .search .checkbox ul .sort-list label {
+          display: inline-block;
+          cursor: pointer;
+          position: relative;
+          padding-left: 25px;
+          font-weight: 500; }
+        header .navigation .checkbox ul .select-list input[type=radio], header .search .checkbox ul .select-list input[type=radio], header .navigation .checkbox ul .sort-list input[type=radio], header .search .checkbox ul .sort-list input[type=radio] {
+          display: none; }
+        header .navigation .checkbox ul .select-list label:before, header .search .checkbox ul .select-list label:before, header .navigation .checkbox ul .sort-list label:before, header .search .checkbox ul .sort-list label:before {
+          content: "";
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          margin-right: 10px;
+          position: absolute;
+          left: 0;
+          bottom: 1px;
+          background-color: #fbfbfb;
+          border-radius: 25px;
+          border: 1px solid #b0b2b5; }
+        header .navigation .checkbox ul .select-list input[type=radio]:checked + label:before, header .search .checkbox ul .select-list input[type=radio]:checked + label:before, header .navigation .checkbox ul .sort-list input[type=radio]:checked + label:before, header .search .checkbox ul .sort-list input[type=radio]:checked + label:before {
+          content: "\2022";
+          color: #000000;
+          font-size: 30px;
+          text-align: center;
+          line-height: 18px; }
   header .search {
     padding-bottom: 20px; }
     header .search input {
@@ -80,4 +135,105 @@ header {
       background-color: #fbfbfb;
       border: 1px solid #efefef; }
     header .search .search-button {
-      width: 19%; }
+      width: 19%;
+      background-color: #ffffff;
+      border: 1px solid #b0b2b5;
+      color: #b0b2b5;
+      font-weight: bolder; }
+      header .search .search-button:hover {
+        cursor: pointer; }
+
+/*********************
+//header
+*********************/
+/*********************
+main content
+*********************/
+.main {
+  margin: 157px 30px 60px 30px;
+  background-color: #fbfbfb;
+  height: auto; }
+  .main .main-content {
+    background-color: #ffffff;
+    height: 100%;
+    box-shadow: 1px -3px 5px 0px rgba(0, 0, 0, 0.3); }
+    .main .main-content .article {
+      margin-bottom: 50px; }
+      .main .main-content .article .article-head {
+        background-color: #dff3fd;
+        display: flex;
+        padding: 30px;
+        width: 70%; }
+        .main .main-content .article .article-head .users {
+          border-radius: 50px; }
+        .main .main-content .article .article-head .article-details {
+          padding-left: 40px; }
+          .main .main-content .article .article-head .article-details .author-name {
+            color: #0266b3;
+            font-weight: bold;
+            font-weight: 500;
+            font-size: 20px; }
+            .main .main-content .article .article-head .article-details .author-name:after {
+              content: "IS ASKING:";
+              color: #b0b2b5;
+              padding-left: 20px;
+              font-weight: 400;
+              font-size: 15px; }
+          .main .main-content .article .article-head .article-details .article-header {
+            color: #0266b3;
+            font-family: 'Lora', serif;
+            font-style: italic; }
+      .main .main-content .article .article-comments {
+        display: inline-flex;
+        width: 75%; }
+        .main .main-content .article .article-comments:before {
+          content: "ASKED";
+          width: 10%;
+          background-color: #dff3fd;
+          padding: 20px;
+          display: flex;
+          justify-content: center;
+          align-content: center;
+          align-items: flex-end;
+          color: #b0b2b5; }
+        .main .main-content .article .article-comments .article-users {
+          margin: 40px 0px 0 14px;
+          padding: 24px;
+          background-color: #eeeeee; }
+          .main .main-content .article .article-comments .article-users img {
+            border-radius: 50px; }
+          .main .main-content .article .article-comments .article-users span {
+            display: block;
+            text-align: center;
+            padding-top: 60px;
+            position: relative;
+            color: #b0b2b5; }
+            .main .main-content .article .article-comments .article-users span:after {
+              content: "\f111";
+              font-family: FontAwesome;
+              padding-top: 16px;
+              position: absolute;
+              display: block;
+              padding-left: auto;
+              width: 100%;
+              color: #b0b2b5; }
+            .main .main-content .article .article-comments .article-users span:before {
+              content: "";
+              border-top: 1px solid #b0b2b5;
+              width: 100%;
+              display: block;
+              padding-bottom: 10px; }
+      .main .main-content .article .stats {
+        display: block;
+        float: right;
+        width: 25%; }
+        .main .main-content .article .stats p {
+          display: inline-block; }
+        .main .main-content .article .stats .stats-details .stats-counter {
+          padding-left: 40px;
+          font-size: 20px; }
+        .main .main-content .article .stats .stats-details .stats-description {
+          font-size: 20px;
+          padding: 20px;
+          font-family: 'Lora', serif;
+          font-style: italic; }

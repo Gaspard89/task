@@ -6,44 +6,78 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,700,500italic,500,400italic,300italic,300,700italic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Lora:400italic' rel='stylesheet' type='text/css'>
 	<script src="https://use.fontawesome.com/18dafb7ceb.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 
 </head>
 
 <body>
-	<header>
-		<nav class="navigation" role="navigation">
-			<div class="questions">
-				<a href="#"><h1>QUESTIONS</h1></a>
-				<a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
-			</div>
-			<div class="checkbox">
-				<ul>
-					<li class="select-list">
-						<input type="checkbox" id="c1" name="cc" />
-						<label for="c1">Check Box 1</label>
-					</li>
-					<li class="select-list">
-						<input type="checkbox" id="c1" name="cc" />
-						<label for="c1">Check Box 1</label>
-					</li>
-					<li class="sort-list">
-						Sort by:
-					</li>
-					<li class="sort-list">
-						<a href="#">recent</a> or <a href="#">hot</a>
-					</li>
-				</ul>
-			</div>
-			<div class="search">
-				<form>
-					<span><input type="text" class="search-square" placeholder="Search questions"><input class="search-button" type="button" value="SEARCH"></span>
-				</form>
-			</div>
-		</nav>
-	</header>
+		<header>
+				<nav class="navigation container" role="navigation">
+					<div class="questions">
+						<a href="#"><h1>QUESTIONS</h1></a>
+						<a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+					</div>
+					<div class="checkbox">
+						<ul>
+							<li class="select-list">
+								<input type="radio" id="c1" name="cc" />
+								<label class="radio-label" for="c1">My shelf</label>
+							</li>
+							<li class="select-list">
+								<input type="radio" id="c2" name="cc" />
+								<label class="radio-label" for="c2">All questions</label>
+							</li>
+							<li class="sort-list">
+								<a href="#">recent</a>
+							</li>
+							<li class="sort-list">
+								<a href="#">hot</a>
+							</li>
+						</ul>
+					</div>
+					<div class="search">
+						<form>
+							<span><input type="text" class="search-square" placeholder="Search questions"><input class="search-button" type="button" value="SEARCH"></span>
+						</form>
+					</div>
+				</nav>
+		</header>
+	<section class="main">
+		<div class="container main-content">
+				<div data-bind="foreach: headersCollection">
+					<div class="article">
+						<div class="article-head">
+						  <div data-bind="html: imageUri"></i></div>
+							<div class="article-details">
+								<div class="author-name" data-bind="text: authorName"></div>
+							  <div class="article-header" data-bind="html: headerText"></div>
+							</div>
+						</div>
+						<div class="article-comments" data-bind="foreach: commentedUriCollection">
+							<div class="article-users">
+								<img data-bind="attr:{src: image}">
+								<span data-bind="text: status"></span>
+							</div>
+						</div>
+						  <div class="stats" data-bind="foreach: trivia">
+								<div class="stats-details">
+									<p class="stats-counter" data-bind="text: statsCounter"></span>
+							    <p class="stats-description" data-bind="text: trivia"></p>
+								</div>
+						  </div>
+						</div>
+					</div>
+				</div>
+		</div>
+	</section>
 
 
-</body>
+	<script type="text/javascript" src="js/searchBar.js"></script>
+	<script type="text/javascript" src="js/main.js">
+	</script>
+	</body>
 </html>

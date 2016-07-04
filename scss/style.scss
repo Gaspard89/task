@@ -1,13 +1,30 @@
 /*********************
 VARIABLES AND MIXINS
 *********************/
-$start: 2em; 
+$blue: #0266b3;
+$dark-gray: #b0b2b5;
+$light-gray: #eeeeee;
+
+
+$start: 2em;
 @each $h in h1, h2, h3, h4, h5, h6{
-    #{$h} { 
+    #{$h} {
       font-size: $start;
       }
       $start: $start - 0.5;
   }
+
+@mixin box-shadow($horizontal, $vertical, $blur, $spread, $color, $inset:"") {
+
+        -webkit-box-shadow:$horizontal $vertical $blur $spread $color #{$inset};
+        -moz-box-shadow:$horizontal $vertical $blur $spread $color #{$inset};
+        box-shadow:$horizontal $vertical $blur $spread $color #{$inset};
+  }
+  // @mixin box-shadow($horizontal, $vertical, $blur, $color, $inset:"") {
+  //   -webkit-box-shadow: $horizontal $vertical $blur $color #{$inset};
+  //   -moz-box-shadow: $horizontal $vertical $blur $color #{$inset};
+  //   box-shadow: $horizontal $vertical $blur $color #{$inset};
+  // }
 
 /*********************
 BREAKPOINTS
@@ -40,10 +57,30 @@ body {
   margin: 0;
   padding: 0;
   background-color: #ffe1ad;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  height: 100%;
+}
+html {
+  height: 100%;
 }
 a {
   color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ui-widget-content {
+    border: 1px solid #ddd;
+    background: #eee url("images/ui-bg_highlight-soft_100_eeeeee_1x100.png") 50% top repeat-x;
+    color: #333;
+    z-index: 999 !important;
+    position: fixed !important;
 }
 /*********************
 header
@@ -52,10 +89,13 @@ header {
   background-color: #ffffff;
   position: fixed;
   width: 100%;
+  top: 0;
+  box-shadow: 0px 0 5px 0 rgba(0,0,0,0.2);
+  z-index: 999;
     .navigation {
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+    // max-width: 1200px;
+    // margin-left: auto;
+    // margin-right: auto;
       .questions {
         display: inline-block;
         h1 {
@@ -63,7 +103,7 @@ header {
           margin: 40px 0 20px 0;
         }
         .fa {
-          color: #0266b3;
+          color: $blue;
           margin: 0 20px;
           font-size: 2em;
         }
@@ -77,13 +117,61 @@ header {
           text-align: center;
           vertical-align: bottom;
           padding-bottom: 20px;
+          li:nth-child(3) a {
+            color: $dark-gray;
+            border-bottom: 1px solid;
+          }
+          li:nth-child(3):before {
+            content: "Sort by:";
+            font-style: italic;
+            padding: 0 20px;
+          }
+          li:nth-child(4) a {
+            color: $blue;
+            font-weight: bold;
+          }
+          li:nth-child(4):before {
+            content: "or";
+            padding-right: 20px;
+            font-style: italic;
+          }
           .select-list {
             display: inline;
-            padding: 0 20px
+            padding: 0 10px;
+            label {
+                display: inline-block;
+                cursor: pointer;
+                position: relative;
+                padding-left: 25px;
+                font-weight: 500;
+            }
+              input[type=radio] {
+                display: none;
+            }
+              label:before {
+                  content: "";
+                  display: inline-block;
+
+                  width: 16px;
+                  height: 16px;
+                  margin-right: 10px;
+                  position: absolute;
+                  left: 0;
+                  bottom: 1px;
+                  background-color: #fbfbfb;
+                  border-radius: 25px;
+                  border: 1px solid $dark-gray;
+              }
+              input[type=radio]:checked + label:before {
+                  content: "\2022";
+                  color: #000000;
+                  font-size: 30px;
+                  text-align: center;
+                  line-height: 18px;
+              }
           }
           .sort-list {
             @extend .select-list;
-            padding: 0 10px;
           }
         }
       }
@@ -104,7 +192,131 @@ header {
     }
     .search-button {
       width: 19%;
+      background-color: #ffffff;
+      border: 1px solid $dark-gray;
+      color: $dark-gray;
+      font-weight: bolder;
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }
+/*********************
+//header
+*********************/
 
+/*********************
+main content
+*********************/
+
+.main {
+      margin: 157px 30px 60px 30px;
+      background-color: #fbfbfb;
+      height: auto;
+      .main-content {
+        background-color: #ffffff;
+        height: 100%;
+        box-shadow: 1px -3px 5px 0px rgba(0,0,0,0.3);
+        .article {
+          margin-bottom: 50px;
+          .article-head {
+            background-color: #dff3fd;
+            display: flex;
+            padding: 30px;
+            width: 70%;
+            .users {
+              border-radius: 50px;
+            }
+            .article-details {
+              padding-left: 40px;
+              .author-name {
+                color: $blue;
+                font-weight: bold;
+                font-weight: 500;
+                font-size: 20px;
+                &:after {
+                  content: "IS ASKING:";
+                  color: $dark-gray;
+                  padding-left: 20px;
+                  font-weight: 400;
+                  font-size: 15px;
+                }
+              }
+              .article-header {
+                color: $blue;
+                font-family: 'Lora', serif;
+                font-style: italic;
+              }
+            }
+          }
+          .article-comments {
+            display: inline-flex;
+            width: 75%;
+            &:before {
+              content: "ASKED";
+              width: 10%;
+              background-color: #dff3fd;
+              padding: 20px;
+              display: flex;
+              justify-content: center;
+              align-content: center;
+              align-items: flex-end;
+              color: $dark-gray;
+            }
+            .article-users {
+              margin: 40px 0px 0 14px;
+              padding: 24px;
+              background-color: $light-gray;
+              img {
+                border-radius: 50px;
+              }
+              span {
+                display: block;
+                text-align: center;
+                padding-top: 60px;
+                position: relative;
+                color: $dark-gray;
+                &:after {
+                  content: "\f111";
+                  font-family: FontAwesome;
+                  padding-top: 16px;
+                  position: absolute;
+                  display: block;
+                  padding-left: auto;
+                  width: 100%;
+                  color: $dark-gray;
+                }
+                &:before {
+                  content: "";
+                  border-top: 1px solid $dark-gray;
+                  width: 100%;
+                  display: block;
+                  padding-bottom: 10px;
+                }
+              }
+            }
+          }
+          .stats {
+            display: block;
+            float: right;
+            width: 25%;
+            p {
+              display: inline-block;
+            }
+            .stats-details {
+              .stats-counter {
+                padding-left: 40px;
+                font-size: 20px;
+              }
+              .stats-description {
+                font-size: 20px;
+                padding: 20px;
+                font-family: 'Lora', serif;
+                font-style: italic;
+              }
+            }
+          }
+        }
+      }
+}
