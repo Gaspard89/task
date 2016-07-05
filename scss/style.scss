@@ -265,6 +265,12 @@ main content
               align-items: flex-end;
               color: $dark-gray;
             }
+            .activities {
+            display: flex;
+            margin: 40px 0px 0 14px;
+            padding: 24px;
+            background-color: #eeeeee;
+          }
             .article-users {
               margin: 40px 0px 0 14px;
               padding: 24px;

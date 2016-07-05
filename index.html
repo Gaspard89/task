@@ -58,10 +58,13 @@
 							</div>
 						</div>
 						<div class="article-comments" data-bind="foreach: commentedUriCollection">
+							<div data-bind="if: $index() === 0 && $parent.commentedUriCollection.length > 3">
+								<div class="activities">
+									<span class="activities-counter" data-bind="text: activitiesCounter"></span>
+									<span class="activites">more activities</span>
+								</div>
+							</div>
 							<div class="article-users">
-								<div data-bind="if: selected">
-            TO JEST SELECTED
-        </div>
 								<img data-bind="attr:{src: image}">
 								<span data-bind="text: status"></span>
 							</div>

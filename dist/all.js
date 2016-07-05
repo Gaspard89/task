@@ -1,28 +1,23 @@
 var dogs = [
   {
     image: 'images/dog5.png',
-    status: 'COMMENTED',
-    selected: "selected"
+    status: 'COMMENTED'
   },
   {
     image: 'images/dog2.png',
-    status: 'COMMENTED',
-    selected: null
+    status: 'COMMENTED'
   },
   {
     image: 'images/dog3.png',
-    status: 'COMMENTED',
-    selected: null
+    status: 'COMMENTED'
   },
   {
     image: 'images/dog4.png',
-    status: 'COMMENTED',
-    selected: null
+    status: 'COMMENTED'
   },
   {
     image: 'images/dog6.png',
-    status: 'ANSWERED',
-    selected: null
+    status: 'ANSWERED'
   }
 ];
 
@@ -92,7 +87,8 @@ ko.applyBindings({
               headerText: '<h2>Will insulin make my patient gain weight?</h2>',
               authorName: 'Eva',
               trivia: stats,
-              commentedUriCollection: dogs1
+              commentedUriCollection: dogs1,
+              activities-counter: '3'
             },
             {
               imageUri: '<img class="users" src="images/dog2.png" alt="Mops" height="100" width="100">',

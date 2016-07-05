@@ -197,6 +197,11 @@ main content
           align-content: center;
           align-items: flex-end;
           color: #b0b2b5; }
+        .main .main-content .article .article-comments .activities {
+          display: flex;
+          margin: 40px 0px 0 14px;
+          padding: 24px;
+          background-color: #eeeeee; }
         .main .main-content .article .article-comments .article-users {
           margin: 40px 0px 0 14px;
           padding: 24px;
