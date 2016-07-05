@@ -79,6 +79,13 @@ var stats3 = [
   },
 ];
 
+var profileDetailsCollection = [
+    {
+    memberFor: "5 months",
+    lastSeen: "Saturday afternoon",
+    activityLevel: "test"
+  }
+];
 
 ko.applyBindings({
         headersCollection: [
@@ -87,8 +94,7 @@ ko.applyBindings({
               headerText: '<h2>Will insulin make my patient gain weight?</h2>',
               authorName: 'Eva',
               trivia: stats,
-              commentedUriCollection: dogs1,
-              activities-counter: '3'
+              commentedUriCollection: dogs1
             },
             {
               imageUri: '<img class="users" src="images/dog2.png" alt="Mops" height="100" width="100">',
@@ -104,8 +110,40 @@ ko.applyBindings({
             trivia: stats3,
             commentedUriCollection: dogs3
           }
+        ],
+        profileCollection: [
+          {
+            profileImage: 'images/dog1.png',
+            userName: '<h2>Dr. Halima</h2>',
+            profileDetails: profileDetailsCollection
+          }
         ]
     });
+
+$(function (){
+
+  var modal = $('#profile');
+  var btn = $('.profile-btn');
+  var close = $('.close');
+
+  btn.click(function (){
+    modal.css("display", "block");
+  });
+
+  close.click(function (){
+    modal.css("display", "none");
+  });
+  $(window).click(function (event){
+    if (event.target == modal) {
+        modal.css("display", "none");
+    }
+  });
+  // window.click(function() {
+  //     if (event.target == modal) {
+  //         modal.css("display", "none");
+  //     }
+  // });
+});
 
 $(function(){
   var tab = [];

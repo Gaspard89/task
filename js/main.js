@@ -79,6 +79,13 @@ var stats3 = [
   },
 ];
 
+var profileDetailsCollection = [
+    {
+    memberFor: "5 months",
+    lastSeen: "Saturday afternoon",
+    activityLevel: "test"
+  }
+];
 
 ko.applyBindings({
         headersCollection: [
@@ -87,24 +94,28 @@ ko.applyBindings({
               headerText: '<h2>Will insulin make my patient gain weight?</h2>',
               authorName: 'Eva',
               trivia: stats,
-              commentedUriCollection: dogs1,
-              activitiesCounter: "3"
+              commentedUriCollection: dogs1
             },
             {
               imageUri: '<img class="users" src="images/dog2.png" alt="Mops" height="100" width="100">',
               headerText: '<h2>Vegan diet in diabetes treatment?</h2>',
               authorName: 'Andrew',
               trivia: stats2,
-              commentedUriCollection: dogs2,
-              activitiesCounter: "4"
+              commentedUriCollection: dogs2
           },
           {
             imageUri: '<img class="users" src="images/dog5.png" alt="Mops" height="100" width="100">',
             headerText: '<h2>Vegan diet to stop diabetes progress</h2>',
             authorName: 'Joseph',
             trivia: stats3,
-            commentedUriCollection: dogs3,
-            activitiesCounter: "4"
+            commentedUriCollection: dogs3
+          }
+        ],
+        profileCollection: [
+          {
+            profileImage: 'images/dog1.png',
+            userName: '<h2>Dr. Halima</h2>',
+            profileDetails: profileDetailsCollection
           }
         ]
     });

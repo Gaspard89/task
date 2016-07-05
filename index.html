@@ -51,7 +51,7 @@
 				<div data-bind="foreach: headersCollection">
 					<div class="article">
 						<div class="article-head">
-						  <div data-bind="html: imageUri"></i></div>
+						  <div class="profile-btn" data-bind="html: imageUri"></i></div>
 							<div class="article-details">
 								<div class="author-name" data-bind="text: authorName"></div>
 							  <div class="article-header" data-bind="html: headerText"></div>
@@ -60,12 +60,12 @@
 						<div class="article-comments" data-bind="foreach: commentedUriCollection">
 							<div data-bind="if: $index() === 0 && $parent.commentedUriCollection.length > 3">
 								<div class="activities">
-									<span class="activities-counter" data-bind="text: activitiesCounter"></span>
-									<span class="activites">more activities</span>
+									<p class="activities-counter">3</p>
+									<span class="activities-span">more activities</span>
 								</div>
 							</div>
 							<div class="article-users">
-								<img data-bind="attr:{src: image}">
+								<img class="profile-btn" data-bind="attr:{src: image}">
 								<span data-bind="text: status"></span>
 							</div>
 						</div>
@@ -81,12 +81,32 @@
 						<h3><a href="#">Load more questions</a></h3>
 					</div>
 		</div>
-
 	</section>
+
+	<div id="profile" class="modal">
+	  <div class="modal-content" data-bind="foreach: profileCollection">
+			<div class="profile-header">
+		    <span class="close">x</span>
+		    <img data-bind="attr:{src: profileImage}">
+				<span class="user-name" data-bind="html: userName"></span>
+				<div class="profile-details" data-bind="foreach: profileDetails">
+					<span data-bind="text: memberFor"></span>
+					<span data-bind="text: lastSeen"></span>
+					<span>
+						<i class="fa fa-trophy fa-2x" aria-hidden="true"></i>
+						<i class="fa fa-trophy fa-2x" aria-hidden="true"></i>
+						<i class="fa fa-trophy fa-2x" id="last-child" aria-hidden="true"></i>
+					</span>
+				</div>
+			</div>
+	  </div>
+
+	</div>
 
 
 	<script type="text/javascript" src="js/searchBar.js"></script>
-	<script type="text/javascript" src="js/main.js">
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/modal.js"></script>
 	</script>
 	</body>
 </html>
