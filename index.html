@@ -59,6 +59,9 @@
 						</div>
 						<div class="article-comments" data-bind="foreach: commentedUriCollection">
 							<div class="article-users">
+								<div data-bind="if: selected">
+            TO JEST SELECTED
+        </div>
 								<img data-bind="attr:{src: image}">
 								<span data-bind="text: status"></span>
 							</div>
@@ -71,8 +74,11 @@
 						  </div>
 						</div>
 					</div>
-				</div>
+					<div class="load container">
+						<h3><a href="#">Load more questions</a></h3>
+					</div>
 		</div>
+
 	</section>
 
 

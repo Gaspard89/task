@@ -158,7 +158,8 @@ main content
     height: 100%;
     box-shadow: 1px -3px 5px 0px rgba(0, 0, 0, 0.3); }
     .main .main-content .article {
-      margin-bottom: 50px; }
+      padding-bottom: 50px;
+      border-bottom: 1px solid #b0b2b5; }
       .main .main-content .article .article-head {
         background-color: #dff3fd;
         display: flex;
@@ -237,3 +238,6 @@ main content
           padding: 20px;
           font-family: 'Lora', serif;
           font-style: italic; }
+    .main .main-content .load h3 {
+      padding: 40px;
+      color: red; }

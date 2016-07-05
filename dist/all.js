@@ -1,34 +1,43 @@
 var dogs = [
   {
     image: 'images/dog5.png',
-    status: 'COMMENTED'
+    status: 'COMMENTED',
+    selected: "selected"
   },
   {
     image: 'images/dog2.png',
-    status: 'COMMENTED'
+    status: 'COMMENTED',
+    selected: null
   },
   {
     image: 'images/dog3.png',
-    status: 'COMMENTED'
+    status: 'COMMENTED',
+    selected: null
   },
   {
     image: 'images/dog4.png',
-    status: 'COMMENTED'
+    status: 'COMMENTED',
+    selected: null
   },
   {
     image: 'images/dog6.png',
-    status: 'ANSWERED'
-  },
+    status: 'ANSWERED',
+    selected: null
+  }
 ];
 
-var dogs1 = dogs;
-var dogs2 = dogs;
-var dogs3 = dogs;
+var dogs1 = dogs.slice(0);
+var dogs2 = dogs.slice(0);
+var dogs3 = dogs.slice(0);
+
+
 dogs1.pop();
-// dogs2.shift();
-// dogs2 = dogs2.reverse();
-dogs3.pop();
-dogs3.pop();
+
+dogs2.pop();
+dogs2.reverse();
+
+dogs3.shift();
+dogs3.shift();
 
 var stats = [
   {
