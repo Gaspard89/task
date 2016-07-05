@@ -87,6 +87,41 @@ var profileDetailsCollection = [
   }
 ];
 
+var profileStatsCollection = [
+  {
+    peers: "46",
+    discussions: "29",
+    findings: "19",
+    questions: "10"
+  }
+];
+
+var joinedCollection = [
+  {
+    imageUri: "images/dog2.png",
+    userName: "S.E.N. Waweru"
+  },
+  {
+    imageUri: "images/dog3.png",
+    userName: "Patricia"
+  },
+  {
+    imageUri: "images/dog4.png",
+    userName: "Joseph Aluoch"
+  }
+];
+
+var hottestCollection = [
+  {
+    imageUri: "images/dog5.png",
+    userName: "Andrew",
+    topic: "<h2>Vegan diet to stop diabetes progreess<h2>",
+    peersInvolved: "6",
+    relatedDiscussions: "3",
+    conversations: "3",
+    upvotes: "19"
+  }
+];
 ko.applyBindings({
         headersCollection: [
             {
@@ -115,7 +150,10 @@ ko.applyBindings({
           {
             profileImage: 'images/dog1.png',
             userName: '<h2>Dr. Halima</h2>',
-            profileDetails: profileDetailsCollection
+            profileDetails: profileDetailsCollection,
+            profileStats: profileStatsCollection,
+            joined: joinedCollection,
+            hottest: hottestCollection
           }
         ]
     });

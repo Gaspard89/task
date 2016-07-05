@@ -1,3 +1,30 @@
+/*********************
+VARIABLES AND MIXINS
+*********************/
+h1 {
+  font-size: 2em; }
+
+h2 {
+  font-size: 1.5em; }
+
+h3 {
+  font-size: 1em; }
+
+h4 {
+  font-size: 0.5em; }
+
+h5 {
+  font-size: 0em; }
+
+h6 {
+  font-size: -0.5em; }
+
+/*********************
+BREAKPOINTS
+*********************/
+/*********************
+HEADER
+*********************/
 .modal {
   display: none;
   position: fixed;
@@ -12,9 +39,17 @@
   .modal .modal-content {
     background-color: #fefefe;
     margin: 5% auto;
-    padding: 20px;
     border: 1px solid #888;
-    width: 80%; }
+    width: 70%;
+    max-width: 1000px; }
+    .modal .modal-content .modal-container {
+      padding: 0 80px; }
+      .modal .modal-content .modal-container h3 {
+        color: #b0b2b5;
+        text-align: center;
+        padding: 20px 0 40px 0; }
+      .modal .modal-content .modal-container .profile-header {
+        border-bottom: 2px solid #b0b2b5; }
     .modal .modal-content .close {
       color: #aaa;
       float: right;
@@ -22,7 +57,8 @@
       font-weight: bold;
       display: block;
       text-align: right;
-      width: 100%; }
+      width: 100%;
+      padding: 20px; }
       .modal .modal-content .close:focus, .modal .modal-content .close:hover {
         color: black;
         text-decoration: none;
@@ -32,7 +68,8 @@
       margin: 0 auto;
       border-radius: 50px; }
     .modal .modal-content .user-name {
-      text-align: center; }
+      text-align: center;
+      color: #0266b3; }
     .modal .modal-content .profile-details {
       display: flex;
       justify-content: space-between;
@@ -55,6 +92,145 @@
           content: "ACTIVITY LEVEL"; }
       .modal .modal-content .profile-details span {
         padding: 0 20px; }
+
+/*********************
+MAIN CONTENT
+*********************/
+.profile-switch {
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  .profile-switch h1 {
+    font-family: 'Lora', serif; }
+  .profile-switch span i {
+    color: #b0b2b5; }
+    .profile-switch span i:hover {
+      -webkit-transition: color 0.3s ease;
+      -moz-transition: color 0.3s ease;
+      -ms-transition: color 0.3s ease;
+      -o-transition: color 0.3s ease;
+      transition: color 0.3s ease;
+      color: #0266b3; }
+
+.profile-stats {
+  display: flex;
+  justify-content: center;
+  margin: 25px 0 50px 0; }
+  .profile-stats .profile-stats-details {
+    background-color: #dff3fd;
+    display: table;
+    width: 130px;
+    height: 130px;
+    margin: 0 15px; }
+    .profile-stats .profile-stats-details .cell {
+      display: table-cell;
+      text-align: center;
+      vertical-align: middle; }
+      .profile-stats .profile-stats-details .cell span {
+        font-size: 28px;
+        font-weight: bold; }
+      .profile-stats .profile-stats-details .cell p {
+        font-family: 'Lora', serif;
+        font-size: 18px; }
+  .profile-stats .profile-peers {
+    -webkit-transform: rotate(65deg);
+    -moz-transform: rotate(65deg);
+    -ms-transform: rotate(65deg);
+    -o-transform: rotate(65deg);
+    transform: rotate(65deg); }
+    .profile-stats .profile-peers .cell {
+      -webkit-transform: rotate(-65deg);
+      -moz-transform: rotate(-65deg);
+      -ms-transform: rotate(-65deg);
+      -o-transform: rotate(-65deg);
+      transform: rotate(-65deg); }
+  .profile-stats .profile-discussions {
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
+    transform: rotate(-10deg); }
+    .profile-stats .profile-discussions .cell {
+      -webkit-transform: rotate(10deg);
+      -moz-transform: rotate(10deg);
+      -ms-transform: rotate(10deg);
+      -o-transform: rotate(10deg);
+      transform: rotate(10deg); }
+  .profile-stats .profile-findings {
+    -webkit-transform: rotate(50deg);
+    -moz-transform: rotate(50deg);
+    -ms-transform: rotate(50deg);
+    -o-transform: rotate(50deg);
+    transform: rotate(50deg); }
+    .profile-stats .profile-findings .cell {
+      -webkit-transform: rotate(-50deg);
+      -moz-transform: rotate(-50deg);
+      -ms-transform: rotate(-50deg);
+      -o-transform: rotate(-50deg);
+      transform: rotate(-50deg); }
+  .profile-stats .profile-questions {
+    -webkit-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    -ms-transform: rotate(20deg);
+    -o-transform: rotate(20deg);
+    transform: rotate(20deg); }
+    .profile-stats .profile-questions .cell {
+      -webkit-transform: rotate(-20deg);
+      -moz-transform: rotate(-20deg);
+      -ms-transform: rotate(-20deg);
+      -o-transform: rotate(-20deg);
+      transform: rotate(-20deg); }
+
+.joined-users {
+  display: flex;
+  justify-content: center; }
+  .joined-users .joined-profiles .joined-image {
+    padding: 25px;
+    background: repeating-linear-gradient(45deg, #eeeeee, #eeeeee 2px, #ffffff 2px, #ffffff 4px);
+    margin: 0 10px; }
+  .joined-users .joined-profiles span {
+    display: block;
+    text-align: center;
+    color: #0266b3;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 0; }
+
+.hottest {
+  background: repeating-linear-gradient(45deg, #eeeeee, #eeeeee 2px, #ffffff 2px, #ffffff 4px);
+  margin: 50px 0 30px 0; }
+  .hottest .hottest-image {
+    position: relative;
+    top: -50px; }
+  .hottest .pusher {
+    margin-top: -30px; }
+  .hottest .hottest-username {
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    color: #0266b3;
+    font-weight: 500; }
+    .hottest .hottest-username:after {
+      content: "FOUND THE GUARDIAN ARTICLE";
+      color: #b0b2b5;
+      font-size: 15px;
+      padding-left: 20px; }
+  .hottest .hottest-topic {
+    text-align: center;
+    color: #0266b3;
+    font-family: 'Lora', serif; }
+  .hottest .topic-stats {
+    display: flex;
+    justify-content: center; }
+    .hottest .topic-stats .stat-item {
+      text-align: center;
+      padding: 20px;
+      font-size: 20px;
+      font-family: 'Lora', serif;
+      font-weight: bold; }
+      .hottest .topic-stats .stat-item p {
+        display: inline; }
 
 /*********************
 VARIABLES AND MIXINS

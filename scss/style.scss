@@ -1,56 +1,5 @@
 @import 'modal';
-
-/*********************
-VARIABLES AND MIXINS
-*********************/
-$blue: #0266b3;
-$dark-gray: #b0b2b5;
-$light-gray: #eeeeee;
-
-
-$start: 2em;
-@each $h in h1, h2, h3, h4, h5, h6{
-    #{$h} {
-      font-size: $start;
-      }
-      $start: $start - 0.5;
-  }
-
-@mixin box-shadow($horizontal, $vertical, $blur, $spread, $color, $inset:"") {
-
-        -webkit-box-shadow:$horizontal $vertical $blur $spread $color #{$inset};
-        -moz-box-shadow:$horizontal $vertical $blur $spread $color #{$inset};
-        box-shadow:$horizontal $vertical $blur $spread $color #{$inset};
-  }
-  // @mixin box-shadow($horizontal, $vertical, $blur, $color, $inset:"") {
-  //   -webkit-box-shadow: $horizontal $vertical $blur $color #{$inset};
-  //   -moz-box-shadow: $horizontal $vertical $blur $color #{$inset};
-  //   box-shadow: $horizontal $vertical $blur $color #{$inset};
-  // }
-
-/*********************
-BREAKPOINTS
-*********************/
-
- @mixin breakpoint($point) {
-   @if $point == desktop {
-     @media (min-width: 70em) { @content ; }
-  }
-   @else if $point == laptop {
-     @media (min-width: 64em) { @content ; }
-  }
-    @else if $point == tablet {
-     @media (min-width: 50em) { @content ; }
-  }
-   @else if $point == phablet {
-     @media (min-width: 37.5em)  { @content ; }
-  }
-  @else if $point == mobileonly {
-     @media (max-width: 37.5em)  { @content ; }
-
-  }
-}
-
+@import 'variables';
 
 /*********************
 STYLES
