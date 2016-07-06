@@ -257,6 +257,94 @@ h6 {
 BREAKPOINTS
 *********************/
 /*********************
+VARIABLES AND MIXINS
+*********************/
+h1 {
+  font-size: 2em; }
+
+h2 {
+  font-size: 1.5em; }
+
+h3 {
+  font-size: 1em; }
+
+h4 {
+  font-size: 0.5em; }
+
+h5 {
+  font-size: 0em; }
+
+h6 {
+  font-size: -0.5em; }
+
+/*********************
+BREAKPOINTS
+*********************/
+/*********************
+HEADER
+*********************/
+.single-question {
+  display: table;
+  width: 100%; }
+  .single-question h1 {
+    display: inline-block; }
+  .single-question .fa {
+    color: #0266b3;
+    margin: 0 20px;
+    font-size: 2em; }
+  .single-question .logo, .single-question .last-action {
+    display: table-cell;
+    text-align: left;
+    vertical-align: middle; }
+  .single-question .last-action {
+    text-align: right;
+    font-weight: bold; }
+    .single-question .last-action span {
+      padding: 0 10px; }
+    .single-question .last-action:before {
+      content: "Last time discussed";
+      font-family: 'Lora', serif; }
+    .single-question .last-action:after {
+      content: "day ago";
+      font-family: 'Lora', serif; }
+
+/*********************
+MAIN - CONTENT
+*********************/
+.single-question-content .main {
+  margin: 91px 30px 60px 30px;
+  background-color: #fbfbfb;
+  height: auto; }
+  .single-question-content .main .article-head {
+    width: auto !important; }
+    .single-question-content .main .article-head img {
+      border-radius: 50px; }
+  .single-question-content .main .single-question-details {
+    display: flex; }
+    .single-question-content .main .single-question-details:before {
+      content: "";
+      background-color: #dff3fd;
+      padding: 70px;
+      color: #b0b2b5; }
+    .single-question-content .main .single-question-details .question-content p {
+      padding: 30px; }
+    .single-question-content .main .single-question-details .question-vote {
+      width: 100%;
+      padding: 30px;
+      margin: 16px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .single-question-content .main .single-question-details .question-vote span {
+        display: block;
+        text-align: center;
+        font-family: 'Lora', serif;
+        padding: 0 20px; }
+      .single-question-content .main .single-question-details .question-vote .arrows i {
+        display: block;
+        color: #0266b3; }
+
+/*********************
 STYLES
 *********************/
 body {

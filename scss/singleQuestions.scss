@@ -1,0 +1,93 @@
+@import 'variables';
+
+
+/*********************
+HEADER
+*********************/
+.single-question {
+  display: table;
+  width: 100%;
+  h1 {
+    display: inline-block;
+  }
+  .fa {
+    color: $blue;
+    margin: 0 20px;
+    font-size: 2em;
+  }
+  .logo {
+    display: table-cell;
+    text-align: left;
+    vertical-align: middle;
+  }
+  .last-action {
+    @extend .logo;
+    text-align: right;
+    font-weight: bold;
+    span {
+      padding: 0 10px;
+    }
+    &:before {
+      content: "Last time discussed";
+      font-family: 'Lora', serif;
+    }
+    &:after {
+      content: "day ago";
+      font-family: 'Lora', serif;
+    }
+  }
+}
+
+
+/*********************
+MAIN - CONTENT
+*********************/
+
+.single-question-content {
+  .main {
+  margin: 91px 30px 60px 30px;
+  background-color: #fbfbfb;
+  height: auto;
+  .article-head {
+    width: auto !important;
+      img {
+        border-radius: 50px;
+      }
+    }
+    .single-question-details {
+      display: flex;
+      &:before {
+        content: "";
+        background-color: #dff3fd;
+        padding: 70px;
+        color: $dark-gray;
+      }
+      .question-content {
+        p {
+          padding: 30px;
+        }
+      }
+      .question-vote {
+        width: 100%;
+        padding: 30px;
+        margin: 16px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span {
+          display: block;
+          text-align: center;
+          font-family: 'Lora', serif;
+          padding: 0 20px;
+        }
+        .arrows {
+
+          i {
+            display: block;
+            color: $blue;
+          }
+        }
+      }
+    }
+  }
+}

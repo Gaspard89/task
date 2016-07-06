@@ -122,25 +122,39 @@ var hottestCollection = [
     upvotes: "19"
   }
 ];
+
+var ClickCounterViewModel = function() {
+    this.numberOfClicks = ko.observable(0);
+
+    this.registerClick = function() {
+        this.numberOfClicks(this.numberOfClicks() + 1);
+    };
+
+    this.hasClickedTooManyTimes = ko.pureComputed(function() {
+        return this.numberOfClicks() >= 1;
+    }, this);
+};
+ko.applyBindings(new ClickCounterViewModel());
+
 ko.applyBindings({
         headersCollection: [
             {
               imageUri: '<img class="users" src="images/dog1.png" alt="Mops" height="100" width="100">',
-              headerText: '<h2>Will insulin make my patient gain weight?</h2>',
+              headerText: '<h2><a href="single-question-view.html">Will insulin make my patient gain weight?</a></h2>',
               authorName: 'Eva',
               trivia: stats,
               commentedUriCollection: dogs1
             },
             {
               imageUri: '<img class="users" src="images/dog2.png" alt="Mops" height="100" width="100">',
-              headerText: '<h2>Vegan diet in diabetes treatment?</h2>',
+              headerText: '<h2><a href="single-question-view.html">Vegan diet in diabetes treatment?</a></h2>',
               authorName: 'Andrew',
               trivia: stats2,
               commentedUriCollection: dogs2
           },
           {
             imageUri: '<img class="users" src="images/dog5.png" alt="Mops" height="100" width="100">',
-            headerText: '<h2>Vegan diet to stop diabetes progress</h2>',
+            headerText: '<h2><a href="single-question-view.html">Vegan diet to stop diabetes progress</a></h2>',
             authorName: 'Joseph',
             trivia: stats3,
             commentedUriCollection: dogs3
@@ -154,6 +168,13 @@ ko.applyBindings({
             profileStats: profileStatsCollection,
             joined: joinedCollection,
             hottest: hottestCollection
+          }
+        ],
+        singleQuestionCollection: [
+          {
+            lastAction: "1",
+            answers: "2",
+            whenAnswered: "",
           }
         ]
     });
