@@ -1,3 +1,7 @@
+$(function(){
+  $("#profile").load("modalTemplate.html");
+});
+
 var dogs = [
   {
     image: 'images/dog5.png',
