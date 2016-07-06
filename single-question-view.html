@@ -13,12 +13,12 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 </head>
 
-<body class="single-question-content">
+<body class="single-question-content"  data-bind="foreach: singleQuestionCollection">
 <header>
     <nav class="navigation container" role="navigation">
-      <div class="single-question" data-bind="foreach: singleQuestionCollection">
+      <div class="single-question">
         <div class="logo">
-          <a href="#"><h1>QUESTIONS</h1></a>
+          <a href="index.html"><h1>QUESTIONS</h1></a>
           <a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
         </div>
         <div class="last-action">
@@ -44,26 +44,60 @@
         </div>
       </div>
       <div class="single-question-details">
-        <div class="question-content">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam dolor, tempus luctus justo in, tincidunt ultricies lectus. Vestibulum imperdiet est libero, eu vulputate est eleifend quis. Pellentesque volutpat placerat ultricies. Morbi rutrum ex in eros mollis, sed posuere enim placerat. Nulla consectetur leo efficitur est malesuada vehicula. Morbi massa mauris, elementum id condimentum nec, bibendum eu nunc. Integer faucibus laoreet maximus. Nam semper metus at commodo lobortis.
-          </p>
-        </div>
-        <div class="question-vote">
-            <span data-bind='text: numberOfClicks'>&nbsp;</span>
-            <span>upvotes</span>
-            <div class="arrows">
-            <i data-bind='click: registerClick, disable: hasClickedTooManyTimes' class="fa fa-caret-up fa-2x" aria-hidden="true"></i>
-            <i class="fa fa-caret-down fa-2x" aria-hidden="true"></i>
-            </div>
-        </div>
+				<div class="question">
+						<div class="question-content">
+		          <p>
+		            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam dolor, tempus luctus justo in, tincidunt ultricies lectus. Vestibulum imperdiet est libero, eu vulputate est eleifend quis. Pellentesque volutpat placerat ultricies. Morbi rutrum ex in eros mollis, sed posuere enim placerat. Nulla consectetur leo efficitur est malesuada vehicula. Morbi massa mauris, elementum id condimentum nec, bibendum eu nunc. Integer faucibus laoreet maximus. Nam semper metus at commodo lobortis.
+		          </p>
+		        </div>
+		        <div class="question-vote">
+		            <span>&nbsp;</span>
+		            <span>upvotes</span>
+		            <div class="arrows" id="voting">
+		            <i class="fa fa-caret-up fa-2x" aria-hidden="true"></i>
+		            <i class="fa fa-caret-down fa-2x" aria-hidden="true"></i>
+		            </div>
+		        </div>
+					</div>
+					<div class="answer-button">
+						<span class="answer-button-span">GIVE new answer</span>
+					</div>
       </div>
     </div>
+		<div class="peers">
+			<span data-bind="text: answers"></span>
+			<span>peers already answered Eva</span>
+		</div>
+		<div class="answers-collection" data-bind="foreach: userAnswers">
+			<div class="answer-main article">
+				<div class="answer-image">
+					<img data-bind="attr:{src: imageUri}">
+				</div>
+				<div class="answer-content">
+					<div class="center">
+						<span class="answer-user" data-bind="text: userName"></span>
+						<span class="answer-date" data-bind="text: active"></span>
+					</div>
+						<p class="answer-paragraph" data-bind="text: answer"></p>
+				</div>
+				<div class="answer-upvotes">
+					<span>&nbsp;</span>
+					<span>upvotes</span>
+					<div class="arrows" id="voting">
+					<i class="fa fa-caret-up fa-2x" aria-hidden="true"></i>
+					<i class="fa fa-caret-down fa-2x" aria-hidden="true"></i>
+					</div>
+				</div>
+				<div class="answer-button">
+					<span data-bind="text: button"></span>
+				</div>
+			</div>
+		</div>
   </div>
 </section>
 
 
 <script type="text/javascript" src="js/main.js"></script>
-
+<script type="text/javascript" src="js/modal.js"></script>
 </body>
 </html>

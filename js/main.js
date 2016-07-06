@@ -123,18 +123,32 @@ var hottestCollection = [
   }
 ];
 
-var ClickCounterViewModel = function() {
-    this.numberOfClicks = ko.observable(0);
-
-    this.registerClick = function() {
-        this.numberOfClicks(this.numberOfClicks() + 1);
-    };
-
-    this.hasClickedTooManyTimes = ko.pureComputed(function() {
-        return this.numberOfClicks() >= 1;
-    }, this);
-};
-ko.applyBindings(new ClickCounterViewModel());
+var answersCollection = [
+  {
+    imageUri: "images/dog6.png",
+    userName: "Patricia",
+    active: "yesterday",
+    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempor velit leo, vel gravida nulla aliquet vitae. Aliquam non sodales risus, et egestas est. Fusce consequat porta nibh ac viverra.",
+    upvotes: "8",
+    button: ""
+  },
+  {
+    imageUri: "images/dog5.png",
+    userName: "David",
+    active: "yesterday",
+    answer: "Donec malesuada sed turpis quis vulputate. Curabitur volutpat lacus in mauris tincidunt, quis vestibulum ante pharetra. Ut quis posuere nisi. Nam quis tincidunt orci.",
+    upvotes: "8",
+    button: "CONTINUE discussion"
+  },
+  {
+    imageUri: "images/dog4.png",
+    userName: "Joseph's",
+    active: "two days",
+    answer: "Aenean ultricies augue odio, ut iaculis mi pretium dictum. Aenean faucibus gravida felis, at auctor risus vehicula in. Suspendisse ut ante erat. Donec venenatis fringilla tincidunt.",
+    upvotes: "8",
+    button: "COMMENT"
+  }
+];
 
 ko.applyBindings({
         headersCollection: [
@@ -174,7 +188,7 @@ ko.applyBindings({
           {
             lastAction: "1",
             answers: "2",
-            whenAnswered: "",
+            userAnswers: answersCollection
           }
         ]
     });
