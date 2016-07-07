@@ -24,8 +24,17 @@ The user profile modal has been applied for users on "base" view site. You can a
 For this purpose I used Knockout JS. Despite the fact that I really would like to learn Angular I decided to choose Knockout because I had a chance to work with this UIs before. All data resides in main.js file. I tried to use templetes for almost every place that can hold varying content. As I wrote earlier I could not apply data from collections for modal in "single question" view because of multiple VieModel apply binding error.
 
 ###Task 5: Add pagination and sorting
+
 :(
 
 ###Task 6: Add search
 
-Search bar was made 
+Search bar was made with jQuery UI. Necessary logic resides in searchBar.js. Search system shows items related to provided query as you mentioned in the task. Unfortunately I could not handle with search bar in mobile menu - it does not work as intended :(
+
+###Task 7: Implement voting
+
+:(
+
+###Task 8: Add routing
+
+:(
