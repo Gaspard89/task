@@ -1,5 +1,5 @@
 
-var gulp = require('gulp'); 
+var gulp = require('gulp');
 
 
 var jshint = require('gulp-jshint');
@@ -17,7 +17,7 @@ gulp.task('lint', function() {
 
 
 gulp.task('sass', function() {
-    return gulp.src('scss/*.scss')
+    return gulp.src('scss/style.scss')
         .pipe(sass())
         .pipe(gulp.dest('css'));
 });

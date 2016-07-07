@@ -36,7 +36,7 @@
 							<a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
 						</div>
 						<a id="toggle-a" href="#"><i class="fa fa-bars fa-2x" id="toggle-nav"></i></a>
-					<div class="checkbox toggle-nav">
+					<div class="checkbox toggle-nav" id="checkbox">
 						<ul>
 							<li class="select-list">
 								<input type="radio" id="c1" name="cc" />
@@ -54,9 +54,12 @@
 							</li>
 						</ul>
 					</div>
-					<div class="search toggle-nav searchButton">
+					<div class="search toggle-nav searchButton" id="search">
 						<form>
-							<span><input type="text" class="search-square" placeholder="Search questions"><input class="search-button" type="button" value="SEARCH"></span>
+							<span>
+								<input class="search-square" type="text" placeholder="Search questions">
+								<input class="search-button" type="button" value="SEARCH">
+							</span>
 						</form>
 					</div>
 				</nav>
@@ -86,7 +89,7 @@
 				<span>
 					<table>
 					<tr>
-					<td><input type="text" class="search-square" placeholder="Search questions"></td>
+					<td><input class="search-square" type="text" placeholder="Search questions"></td>
 					<td><input class="search-button" type="button" value="SEARCH"></span></td>
 					</tr>
 					</table>

@@ -7,7 +7,7 @@ $(function(){
 
     $(".search-square").autocomplete({source: tab});
 
-    $(".searchButton").click(function (){
+    $(".search-button").click(function (){
       var result = $(".search-square").val();
       console.log(result);
       if(result === "") {
@@ -18,6 +18,4 @@ $(function(){
         $('div.article:contains("' + result + '")').css("display","block");
       }
     });
-
-
 });
