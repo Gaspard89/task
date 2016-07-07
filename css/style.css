@@ -39,7 +39,7 @@ HEADER
   .modal .modal-content {
     background-color: #fefefe;
     margin: 5% auto;
-    border: 1px solid #888;
+    border: 1px solid #b0b2b5;
     width: 70%;
     max-width: 1000px; }
     @media (max-width: 1250px) {
@@ -58,7 +58,7 @@ HEADER
       .modal .modal-content .modal-container .profile-header {
         border-bottom: 2px solid #b0b2b5; }
     .modal .modal-content .close {
-      color: #aaa;
+      color: #b0b2b5;
       float: right;
       font-size: 28px;
       font-weight: bold;
@@ -67,7 +67,7 @@ HEADER
       width: 100%;
       padding: 20px; }
       .modal .modal-content .close:focus, .modal .modal-content .close:hover {
-        color: black;
+        color: #000000;
         text-decoration: none;
         cursor: pointer; }
     .modal .modal-content img {
@@ -79,6 +79,8 @@ HEADER
       color: #0266b3; }
     .modal .modal-content .profile-details {
       display: flex;
+      display: -webkit-flex;
+      /* Safari */
       justify-content: space-between;
       -webkit-justify-content: space-between;
       /* Safari */
@@ -111,7 +113,11 @@ HEADER
             padding-bottom: 10px; } }
       .modal .modal-content .profile-details span:nth-child(3) {
         align-items: flex-start;
-        display: flex; }
+        -webkit-align-items: flex-start;
+        /* Safari */
+        display: flex;
+        display: -webkit-flex;
+        /* Safari */ }
         @media (max-width: 940px) {
           .modal .modal-content .profile-details span:nth-child(3) {
             display: block; } }
@@ -132,8 +138,14 @@ MAIN CONTENT
 .profile-switch {
   padding-top: 20px;
   display: flex;
+  display: -webkit-flex;
+  /* Safari */
   align-items: center;
-  justify-content: space-between; }
+  -webkit-align-items: center;
+  /* Safari */
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  /* Safari */ }
   .profile-switch h1 {
     font-family: 'Lora', serif;
     text-align: center; }
@@ -149,13 +161,21 @@ MAIN CONTENT
 
 .profile-stats-outer {
   display: flex;
-  justify-content: center; }
+  display: -webkit-flex;
+  /* Safari */
+  justify-content: center;
+  -webkit-justify-content: center;
+  /* Safari */ }
   @media (max-width: 940px) {
     .profile-stats-outer {
       display: block; } }
   .profile-stats-outer .profile-stats {
     display: flex;
+    display: -webkit-flex;
+    /* Safari */
     justify-content: center;
+    -webkit-justify-content: center;
+    /* Safari */
     margin: 25px 0 50px 0;
     -webkit-flex-flow: row wrap;
     /* Safari */
@@ -227,7 +247,11 @@ MAIN CONTENT
 
 .joined-users {
   display: flex;
-  justify-content: center; }
+  display: -webkit-flex;
+  /* Safari */
+  justify-content: center;
+  -webkit-justify-content: center;
+  /* Safari */ }
   @media (max-width: 680px) {
     .joined-users img {
       width: 80px;
@@ -274,7 +298,11 @@ MAIN CONTENT
     font-family: 'Lora', serif; }
   .hottest .topic-stats {
     display: flex;
+    display: -webkit-flex;
+    /* Safari */
     justify-content: center;
+    -webkit-justify-content: center;
+    /* Safari */
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap; }
     .hottest .topic-stats .stat-item {
@@ -397,7 +425,9 @@ MAIN - CONTENT
     .single-question-content .main .main-content .single-question-details {
       position: relative; }
       .single-question-content .main .main-content .single-question-details .question {
-        display: flex; }
+        display: flex;
+        display: -webkit-flex;
+        /* Safari */ }
         .single-question-content .main .main-content .single-question-details .question:before {
           content: "";
           background-color: #dff3fd;
@@ -409,8 +439,14 @@ MAIN - CONTENT
           padding: 30px;
           margin: 16px 0;
           display: flex;
+          display: -webkit-flex;
+          /* Safari */
           justify-content: center;
-          align-items: center; }
+          -webkit-justify-content: center;
+          /* Safari */
+          align-items: center;
+          -webkit-align-items: center;
+          /* Safari */ }
           .single-question-content .main .main-content .single-question-details .question .question-vote span {
             display: block;
             text-align: center;
@@ -468,10 +504,16 @@ MAIN - CONTENT
             float: none;
             border-left: 3px solid #b0b2b5; } }
       .single-question-content .main .main-content .answers-collection .answer-main:nth-child(3) {
-        display: inline-flex; }
+        display: inline-flex;
+        display: -webkit-inline-flex;
+        /* Safari */ }
       .single-question-content .main .main-content .answers-collection .answer-main {
         display: flex;
+        display: -webkit-flex;
+        /* Safari */
         align-items: center;
+        -webkit-align-items: center;
+        /* Safari */
         position: relative; }
         .single-question-content .main .main-content .answers-collection .answer-main:nth-of-type(1) .answer-button {
           display: none; }
@@ -488,6 +530,8 @@ MAIN - CONTENT
           padding: 30px 10px; }
           .single-question-content .main .main-content .answers-collection .answer-main .answer-content .center {
             display: flex;
+            display: -webkit-flex;
+            /* Safari */
             align-items: center; }
             .single-question-content .main .main-content .answers-collection .answer-main .answer-content .center .answer-user {
               font-size: 20px;
@@ -509,8 +553,14 @@ MAIN - CONTENT
                 padding: 0 20px; }
         .single-question-content .main .main-content .answers-collection .answer-main .answer-upvotes {
           display: flex;
+          display: -webkit-flex;
+          /* Safari */
           justify-content: center;
+          -webkit-justify-content: center;
+          /* Safari */
           align-items: center;
+          -webkit-align-items: center;
+          /* Safari */
           padding: 30px;
           margin: 16px 0; }
           .single-question-content .main .main-content .answers-collection .answer-main .answer-upvotes span {
@@ -582,6 +632,9 @@ BREAKPOINTS
   z-index: 1;
   width: 100%;
   left: -100%; }
+  @media (min-width: 941px) {
+    .mobile-menu {
+      display: none; } }
   .mobile-menu table {
     width: 100%; }
   .mobile-menu .checkbox {
@@ -642,7 +695,7 @@ BREAKPOINTS
       width: 75%;
       margin: 0 20px;
       background-color: #fbfbfb;
-      border: 1px solid #efefef; }
+      border: 1px solid #eeeeee; }
       @media (max-width: 940px) {
         .mobile-menu .search .search-square {
           width: 80%; } }
@@ -687,15 +740,8 @@ a {
     .container {
       max-width: 100%; } }
 
-.ui-widget-content {
-  border: 1px solid #ddd;
-  background: #eee url("images/ui-bg_highlight-soft_100_eeeeee_1x100.png") 50% top repeat-x;
-  color: #333;
-  z-index: 999 !important;
-  position: fixed !important; }
-
 /*********************
-header
+HEADER
 *********************/
 header {
   background-color: #ffffff;
@@ -795,7 +841,7 @@ header {
       width: 75%;
       margin-right: 20px;
       background-color: #fbfbfb;
-      border: 1px solid #efefef; }
+      border: 1px solid #eeeeee; }
     header .search .search-button {
       width: 19%;
       background-color: #ffffff;
@@ -809,10 +855,7 @@ header {
         cursor: pointer; }
 
 /*********************
-//header
-*********************/
-/*********************
-main content
+MAIN CONTENT
 *********************/
 .main {
   margin: 157px 30px 60px 30px;
@@ -834,6 +877,8 @@ main content
       .main .main-content .article .article-head {
         background-color: #dff3fd;
         display: flex;
+        display: -webkit-flex;
+        /* Safari */
         padding: 30px;
         width: 70%; }
         @media (max-width: 940px) {
@@ -868,6 +913,8 @@ main content
                 font-size: 20px; } }
       .main .main-content .article .article-comments {
         display: inline-flex;
+        display: -webkit-inline-flex;
+        /* Safari */
         width: 75%; }
         @media (max-width: 768px) {
           .main .main-content .article .article-comments {
@@ -878,9 +925,17 @@ main content
           background-color: #dff3fd;
           padding: 20px;
           display: flex;
+          display: -webkit-flex;
+          /* Safari */
           justify-content: center;
+          -webkit-justify-content: center;
+          /* Safari */
           align-content: center;
+          -webkit-align-content: center;
+          /* Safari */
           align-items: flex-end;
+          -webkit-align-items: flex-end;
+          /* Safari */
           color: #b0b2b5; }
           @media (max-width: 680px) {
             .main .main-content .article .article-comments:before {

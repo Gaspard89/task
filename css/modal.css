@@ -39,7 +39,7 @@ HEADER
   .modal .modal-content {
     background-color: #fefefe;
     margin: 5% auto;
-    border: 1px solid #888;
+    border: 1px solid #b0b2b5;
     width: 70%;
     max-width: 1000px; }
     @media (max-width: 1250px) {
@@ -58,7 +58,7 @@ HEADER
       .modal .modal-content .modal-container .profile-header {
         border-bottom: 2px solid #b0b2b5; }
     .modal .modal-content .close {
-      color: #aaa;
+      color: #b0b2b5;
       float: right;
       font-size: 28px;
       font-weight: bold;
@@ -67,7 +67,7 @@ HEADER
       width: 100%;
       padding: 20px; }
       .modal .modal-content .close:focus, .modal .modal-content .close:hover {
-        color: black;
+        color: #000000;
         text-decoration: none;
         cursor: pointer; }
     .modal .modal-content img {
@@ -79,6 +79,8 @@ HEADER
       color: #0266b3; }
     .modal .modal-content .profile-details {
       display: flex;
+      display: -webkit-flex;
+      /* Safari */
       justify-content: space-between;
       -webkit-justify-content: space-between;
       /* Safari */
@@ -111,7 +113,11 @@ HEADER
             padding-bottom: 10px; } }
       .modal .modal-content .profile-details span:nth-child(3) {
         align-items: flex-start;
-        display: flex; }
+        -webkit-align-items: flex-start;
+        /* Safari */
+        display: flex;
+        display: -webkit-flex;
+        /* Safari */ }
         @media (max-width: 940px) {
           .modal .modal-content .profile-details span:nth-child(3) {
             display: block; } }
@@ -132,8 +138,14 @@ MAIN CONTENT
 .profile-switch {
   padding-top: 20px;
   display: flex;
+  display: -webkit-flex;
+  /* Safari */
   align-items: center;
-  justify-content: space-between; }
+  -webkit-align-items: center;
+  /* Safari */
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  /* Safari */ }
   .profile-switch h1 {
     font-family: 'Lora', serif;
     text-align: center; }
@@ -149,13 +161,21 @@ MAIN CONTENT
 
 .profile-stats-outer {
   display: flex;
-  justify-content: center; }
+  display: -webkit-flex;
+  /* Safari */
+  justify-content: center;
+  -webkit-justify-content: center;
+  /* Safari */ }
   @media (max-width: 940px) {
     .profile-stats-outer {
       display: block; } }
   .profile-stats-outer .profile-stats {
     display: flex;
+    display: -webkit-flex;
+    /* Safari */
     justify-content: center;
+    -webkit-justify-content: center;
+    /* Safari */
     margin: 25px 0 50px 0;
     -webkit-flex-flow: row wrap;
     /* Safari */
@@ -227,7 +247,11 @@ MAIN CONTENT
 
 .joined-users {
   display: flex;
-  justify-content: center; }
+  display: -webkit-flex;
+  /* Safari */
+  justify-content: center;
+  -webkit-justify-content: center;
+  /* Safari */ }
   @media (max-width: 680px) {
     .joined-users img {
       width: 80px;
@@ -274,7 +298,11 @@ MAIN CONTENT
     font-family: 'Lora', serif; }
   .hottest .topic-stats {
     display: flex;
+    display: -webkit-flex;
+    /* Safari */
     justify-content: center;
+    -webkit-justify-content: center;
+    /* Safari */
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap; }
     .hottest .topic-stats .stat-item {

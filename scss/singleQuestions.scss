@@ -46,7 +46,7 @@ MAIN - CONTENT
 .single-question-content {
   .main {
   margin: 91px 30px 60px 30px;
-  background-color: #fbfbfb;
+  background-color: $gray-background;
   height: auto;
   @include breakpoint(smallDesktop) {
     margin: 91px 0 60px 0;
@@ -82,9 +82,10 @@ MAIN - CONTENT
       position: relative;
       .question {
             display: flex;
+            display: -webkit-flex; /* Safari */
             &:before {
               content: "";
-              background-color: #dff3fd;
+              background-color: $light-blue;
               padding: 70px;
               color: $dark-gray;
             }
@@ -97,8 +98,11 @@ MAIN - CONTENT
               padding: 30px;
               margin: 16px 0;
               display: flex;
+              display: -webkit-flex; /* Safari */
               justify-content: center;
+              -webkit-justify-content: center; /* Safari */
               align-items: center;
+              -webkit-align-items: center; /* Safari */
               span {
                 display: block;
                 text-align: center;
@@ -167,10 +171,13 @@ MAIN - CONTENT
       }
       .answer-main:nth-child(3) {
         display: inline-flex;
+        display: -webkit-inline-flex; /* Safari */
       }
     .answer-main {
       display: flex;
+      display: -webkit-flex; /* Safari */
       align-items: center;
+      -webkit-align-items: center; /* Safari */
       position: relative;
       &:nth-of-type(1) {
         .answer-button {
@@ -196,6 +203,7 @@ MAIN - CONTENT
         padding: 30px 10px;
         .center {
           display: flex;
+          display: -webkit-flex; /* Safari */
           align-items: center;
           .answer-user {
             font-size: 20px;
@@ -223,8 +231,11 @@ MAIN - CONTENT
       }
       .answer-upvotes {
         display: flex;
+        display: -webkit-flex; /* Safari */
         justify-content: center;
+        -webkit-justify-content: center; /* Safari */
         align-items: center;
+        -webkit-align-items: center; /* Safari */
         padding: 30px;
         margin: 16px 0;
         span {

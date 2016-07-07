@@ -1,6 +1,9 @@
 @import 'variables';
 .mobile-menu {
-  background-color: #373F51;
+  @media (min-width: 941px) {
+  display: none;
+  }
+  background-color: $mobile-background;
   position: fixed;
   z-index: 1;
   width: 100%;
@@ -55,7 +58,7 @@
             position: absolute;
             left: 0;
             bottom: 1px;
-            background-color: #fbfbfb;
+            background-color: $gray-background;
             border-radius: 25px;
             border: 1px solid $dark-gray;
         }
@@ -83,15 +86,15 @@
   .search-square {
     width: 75%;
     margin: 0 20px;
-    background-color: #fbfbfb;
-    border: 1px solid #efefef;
+    background-color: $gray-background;
+    border: 1px solid $light-gray;
     @include breakpoint(tablet) {
       width: 80%;
     }
   }
   .search-button {
     width: 19%;
-    background-color: #ffffff;
+    background-color: $white;
     border: 1px solid $dark-gray;
     color: $dark-gray;
     font-weight: bolder;

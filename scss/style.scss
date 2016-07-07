@@ -8,7 +8,7 @@ STYLES
 body {
   margin: 0;
   padding: 0;
-  background-color: #ffe1ad;
+  background-color: $body-background;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   height: 100%;
@@ -30,20 +30,12 @@ a {
   }
 }
 
-.ui-widget-content {
-    border: 1px solid #ddd;
-    background: #eee url("images/ui-bg_highlight-soft_100_eeeeee_1x100.png") 50% top repeat-x;
-    color: #333;
-    z-index: 999 !important;
-    position: fixed !important;
-}
-
 
 /*********************
-header
+HEADER
 *********************/
 header {
-  background-color: #ffffff;
+  background-color: $white;
   position: fixed;
   width: 100%;
   top: 0;
@@ -135,13 +127,13 @@ header {
                   position: absolute;
                   left: 0;
                   bottom: 1px;
-                  background-color: #fbfbfb;
+                  background-color: $gray-background;
                   border-radius: 25px;
                   border: 1px solid $dark-gray;
               }
               input[type=radio]:checked + label:before {
                   content: "\2022";
-                  color: #000000;
+                  color: $black;
                   font-size: 30px;
                   text-align: center;
                   line-height: 18px;
@@ -163,12 +155,12 @@ header {
     .search-square {
       width: 75%;
       margin-right: 20px;
-      background-color: #fbfbfb;
-      border: 1px solid #efefef;
+      background-color: $gray-background;
+      border: 1px solid $light-gray;
     }
     .search-button {
       width: 19%;
-      background-color: #ffffff;
+      background-color: $white;
       border: 1px solid $dark-gray;
       color: $dark-gray;
       font-weight: bolder;
@@ -182,16 +174,12 @@ header {
   }
 }
 /*********************
-//header
-*********************/
-
-/*********************
-main content
+MAIN CONTENT
 *********************/
 
 .main {
       margin: 157px 30px 60px 30px;
-      background-color: #fbfbfb;
+      background-color: $gray-background;
       height: auto;
       @include breakpoint(smallDesktop) {
         margin: 157px 0 60px 0;
@@ -200,15 +188,16 @@ main content
         margin: 78px 0 60px 0;
       }
       .main-content {
-        background-color: #ffffff;
+        background-color: $white;
         height: 100%;
         box-shadow: 1px -3px 5px 0px rgba(0,0,0,0.3);
         .article {
           padding-bottom: 50px;
           border-bottom: 1px solid $dark-gray;
           .article-head {
-            background-color: #dff3fd;
+            background-color: $light-blue;
             display: flex;
+            display: -webkit-flex; /* Safari */
             padding: 30px;
             width: 70%;
             @include breakpoint(tablet) {
@@ -255,6 +244,7 @@ main content
 
           .article-comments {
             display: inline-flex;
+            display: -webkit-inline-flex; /* Safari */
             width: 75%;
             @include breakpoint(phablet) {
               width: 60%;
@@ -262,12 +252,16 @@ main content
             &:before {
               content: "ASKED";
               max-width: 6%;
-              background-color: #dff3fd;
+              background-color: $light-blue;
               padding: 20px;
               display: flex;
+              display: -webkit-flex; /* Safari */
               justify-content: center;
+              -webkit-justify-content: center; /* Safari */
               align-content: center;
+              -webkit-align-content: center; /* Safari */
               align-items: flex-end;
+              -webkit-align-items: flex-end; /* Safari */
               color: $dark-gray;
               @include breakpoint(smallBreak) {
                 display: none;
@@ -276,7 +270,7 @@ main content
             .activities {
             margin: 40px 0 0 14px;
             padding: 24px;
-            background-color: #ffffff;
+            background-color: $white;
             min-width: 100px;
             @include breakpoint(smallBreak) {
               background-color: $light-gray;
@@ -284,7 +278,7 @@ main content
             }
             .activities-counter {
               text-align: center;
-              color: #000000;
+              color: $black;
               font-size: 20px;
             }
             .activities-span {
@@ -313,7 +307,7 @@ main content
               }
               img {
                 border-radius: 50px;
-                @include breakpoint(smallBreak){
+                @include breakpoint(smallBreak) {
                   width: 80px;
                   height: 80px;
                   display: block;
@@ -327,7 +321,7 @@ main content
                 padding-top: 60px;
                 position: relative;
                 color: $dark-gray;
-                @include breakpoint(smallBreak){
+                @include breakpoint(smallBreak) {
                   padding-top: 82px;
                 }
                 &:after {

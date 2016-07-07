@@ -14,9 +14,9 @@ HEADER
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
     .modal-content {
-        background-color: #fefefe;
+        background-color: $modal-background;
         margin: 5% auto;
-        border: 1px solid #888;
+        border: 1px solid $dark-gray;
         width: 70%;
         max-width: 1000px;
         @include breakpoint(smallDesktop) {
@@ -34,11 +34,11 @@ HEADER
             padding: 20px 0 40px 0;
           }
           .profile-header {
-            border-bottom: 2px solid #b0b2b5;
+            border-bottom: 2px solid $dark-gray;
           }
         }
         .close {
-            color: #aaa;
+            color: $dark-gray;
             float: right;
             font-size: 28px;
             font-weight: bold;
@@ -47,7 +47,7 @@ HEADER
             width: 100%;
             padding: 20px;
             &:focus, &:hover {
-              color: black;
+              color: $black;
               text-decoration: none;
               cursor: pointer;
             }
@@ -63,6 +63,7 @@ HEADER
         }
         .profile-details {
           display: flex;
+          display: -webkit-flex; /* Safari */
           justify-content: space-between;
           -webkit-justify-content: space-between; /* Safari */
           margin: 20px 0;
@@ -97,7 +98,9 @@ HEADER
           }
           span:nth-child(3){
             align-items: flex-start;
+            -webkit-align-items: flex-start; /* Safari */
             display: flex;
+            display: -webkit-flex; /* Safari */
             @include breakpoint(tablet) {
               display: block;
             }
@@ -106,7 +109,7 @@ HEADER
               color: #f98b81;
             }
             #last-child {
-              color: #b0b2b5;
+              color: $dark-gray;
             }
             &:before {
                 color: $dark-gray;
@@ -125,14 +128,17 @@ MAIN CONTENT
 .profile-switch {
       padding-top: 20px;
       display: flex;
+      display: -webkit-flex; /* Safari */
       align-items: center;
+      -webkit-align-items: center; /* Safari */
       justify-content: space-between;
+      -webkit-justify-content: space-between; /* Safari */
       h1 {
         font-family: 'Lora', serif;
         text-align: center;
       }
       span i{
-        color: #b0b2b5;
+        color: $dark-gray;
         &:hover {
           @include transition (color, 0.3s, ease)
           color: $blue;
@@ -141,13 +147,17 @@ MAIN CONTENT
 }
 .profile-stats-outer {
   display: flex;
+  display: -webkit-flex; /* Safari */
   justify-content: center;
+  -webkit-justify-content: center; /* Safari */
   @include breakpoint(tablet) {
     display: block;
   }
 .profile-stats {
   display: flex;
+  display: -webkit-flex; /* Safari */
   justify-content: center;
+  -webkit-justify-content: center; /* Safari */
   margin: 25px 0 50px 0;
   -webkit-flex-flow: row wrap; /* Safari */
   flex-flow: row wrap;
@@ -199,7 +209,9 @@ MAIN CONTENT
 }
 .joined-users {
   display: flex;
+  display: -webkit-flex; /* Safari */
   justify-content: center;
+  -webkit-justify-content: center; /* Safari */
   @include breakpoint(smallBreak) {
     img {
       width: 80px;
@@ -209,7 +221,7 @@ MAIN CONTENT
   .joined-profiles {
     .joined-image {
       padding: 25px;
-      background: repeating-linear-gradient( 45deg, $light-gray, $light-gray 2px, #ffffff 2px, #ffffff 4px );
+      background: repeating-linear-gradient( 45deg, $light-gray, $light-gray 2px, $white 2px, $white 4px );
       margin: 0 10px;
     }
     span {
@@ -224,7 +236,7 @@ MAIN CONTENT
 }
 
 .hottest {
-  background: repeating-linear-gradient( 45deg, $light-gray, $light-gray 2px, #ffffff 2px, #ffffff 4px );
+  background: repeating-linear-gradient( 45deg, $light-gray, $light-gray 2px, $white 2px, $white 4px );
   margin-top: 50px;
   .hottest-image {
     position: relative;
@@ -258,7 +270,9 @@ MAIN CONTENT
   }
   .topic-stats {
     display: flex;
+    display: -webkit-flex; /* Safari */
     justify-content: center;
+    -webkit-justify-content: center; /* Safari */
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
     .stat-item {
