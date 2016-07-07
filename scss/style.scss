@@ -1,6 +1,7 @@
 @import 'modal';
 @import 'variables';
 @import 'singleQuestions';
+@import 'mobileMenu';
 /*********************
 STYLES
 *********************/
@@ -52,11 +53,31 @@ header {
       @include breakpoint(smallDesktop) {
         padding: 0 30px;
       }
+      @include breakpoint(tablet) {
+        padding: 0 30px;
+      }
+      .toggle-nav {
+        @include breakpoint(tablet) {
+          display: none !important;
+        }
+      }
+      #toggle-a {
+        position: absolute;
+        right: 0;
+        line-height: 78px;
+        padding: 0px 30px;
+        @media (min-width: 941px) {
+          display: none;
+        }
+      }
       .questions {
         display: inline-block;
         h1 {
           display: inline-block;
           margin: 40px 0 20px 0;
+          @include breakpoint(tablet) {
+            margin: 20px 0;
+          }
         }
         .fa {
           color: $blue;
@@ -151,6 +172,9 @@ header {
       border: 1px solid $dark-gray;
       color: $dark-gray;
       font-weight: bolder;
+      @include breakpoint(smallDesktop) {
+        width: 17%;
+      }
       &:hover {
         cursor: pointer;
       }
@@ -171,6 +195,9 @@ main content
       height: auto;
       @include breakpoint(smallDesktop) {
         margin: 157px 0 60px 0;
+      }
+      @include breakpoint(tablet) {
+        margin: 78px 0 60px 0;
       }
       .main-content {
         background-color: #ffffff;

@@ -7,7 +7,7 @@ $(function(){
 
     $(".search-square").autocomplete({source: tab});
 
-    $("#searchButton").click(function (){
+    $(".searchButton").click(function (){
       var result = $(".search-square").val();
       console.log(result);
       if(result === "") {

@@ -369,6 +369,9 @@ MAIN - CONTENT
   margin: 91px 30px 60px 30px;
   background-color: #fbfbfb;
   height: auto; }
+  @media (max-width: 1250px) {
+    .single-question-content .main {
+      margin: 91px 0 60px 0; } }
   .single-question-content .main .main-content {
     box-shadow: none;
     background-color: #fbfbfb; }
@@ -382,6 +385,15 @@ MAIN - CONTENT
       width: auto !important; }
       .single-question-content .main .main-content .article-head img {
         border-radius: 50px; }
+      .single-question-content .main .main-content .article-head h2 {
+        display: inline-block; }
+      .single-question-content .main .main-content .article-head span {
+        display: inline-block;
+        position: relative;
+        padding-left: 150px;
+        font-weight: bold;
+        font-size: 20px;
+        font-family: 'Roboto', sans-serif; }
     .single-question-content .main .main-content .single-question-details {
       position: relative; }
       .single-question-content .main .main-content .single-question-details .question {
@@ -403,7 +415,8 @@ MAIN - CONTENT
             display: block;
             text-align: center;
             font-family: 'Lora', serif;
-            padding: 0 20px; }
+            padding: 0 20px;
+            font-weight: bold; }
           .single-question-content .main .main-content .single-question-details .question .question-vote .arrows {
             display: block; }
             .single-question-content .main .main-content .single-question-details .question .question-vote .arrows i {
@@ -444,12 +457,17 @@ MAIN - CONTENT
         font-family: 'Lora', serif; }
     .single-question-content .main .main-content .answers-collection {
       margin: 10px 0 50px 0; }
-      .single-question-content .main .main-content .answers-collection div:nth-child(1) {
+      .single-question-content .main .main-content .answers-collection .answer-main:nth-child(1) {
         margin-bottom: 0; }
-      .single-question-content .main .main-content .answers-collection div:nth-child(2) {
+      .single-question-content .main .main-content .answers-collection .answer-main:nth-child(2) {
         width: 80%;
         float: right; }
-      .single-question-content .main .main-content .answers-collection div:nth-child(3) {
+        @media (max-width: 940px) {
+          .single-question-content .main .main-content .answers-collection .answer-main:nth-child(2) {
+            width: 100%;
+            float: none;
+            border-left: 3px solid #b0b2b5; } }
+      .single-question-content .main .main-content .answers-collection .answer-main:nth-child(3) {
         display: inline-flex; }
       .single-question-content .main .main-content .answers-collection .answer-main {
         display: flex;
@@ -459,6 +477,9 @@ MAIN - CONTENT
           display: none; }
         .single-question-content .main .main-content .answers-collection .answer-main:nth-of-type(2) .answer-button {
           width: 75%; }
+          @media (max-width: 940px) {
+            .single-question-content .main .main-content .answers-collection .answer-main:nth-of-type(2) .answer-button {
+              width: 100%; } }
         .single-question-content .main .main-content .answers-collection .answer-main .answer-image {
           padding: 30px; }
           .single-question-content .main .main-content .answers-collection .answer-main .answer-image img {
@@ -532,6 +553,115 @@ MAIN - CONTENT
               cursor: pointer; }
 
 /*********************
+VARIABLES AND MIXINS
+*********************/
+h1 {
+  font-size: 2em; }
+
+h2 {
+  font-size: 1.5em; }
+
+h3 {
+  font-size: 1em; }
+
+h4 {
+  font-size: 0.5em; }
+
+h5 {
+  font-size: 0em; }
+
+h6 {
+  font-size: -0.5em; }
+
+/*********************
+BREAKPOINTS
+*********************/
+.mobile-menu {
+  background-color: #373F51;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  left: -100%; }
+  .mobile-menu table {
+    width: 100%; }
+  .mobile-menu .checkbox {
+    text-align: center;
+    padding: 5px;
+    font-size: 14px;
+    color: #ffffff; }
+    .mobile-menu .checkbox ul li:nth-child(3) a {
+      color: #b0b2b5;
+      border-bottom: 1px solid; }
+    .mobile-menu .checkbox ul li:nth-child(3):before {
+      content: "Sort by:";
+      font-style: italic;
+      padding: 0 20px; }
+    .mobile-menu .checkbox ul li:nth-child(4) a {
+      color: #0266b3;
+      font-weight: bold; }
+    .mobile-menu .checkbox ul li:nth-child(4):before {
+      content: "or";
+      padding-right: 20px;
+      font-style: italic; }
+    .mobile-menu .checkbox ul .select-list, .mobile-menu .checkbox ul .sort-list, .mobile-menu header .navigation .checkbox ul .sort-list, header .navigation .mobile-menu .checkbox ul .sort-list {
+      display: inline;
+      padding: 0 10px; }
+      .mobile-menu .checkbox ul .select-list label, .mobile-menu .checkbox ul .sort-list label {
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        padding-left: 25px;
+        font-weight: 500; }
+      .mobile-menu .checkbox ul .select-list input[type=radio], .mobile-menu .checkbox ul .sort-list input[type=radio] {
+        display: none; }
+      .mobile-menu .checkbox ul .select-list label:before, .mobile-menu .checkbox ul .sort-list label:before {
+        content: "";
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin-right: 10px;
+        position: absolute;
+        left: 0;
+        bottom: 1px;
+        background-color: #fbfbfb;
+        border-radius: 25px;
+        border: 1px solid #b0b2b5; }
+      .mobile-menu .checkbox ul .select-list input[type=radio]:checked + label:before, .mobile-menu .checkbox ul .sort-list input[type=radio]:checked + label:before {
+        content: "\2022";
+        color: #000000;
+        font-size: 30px;
+        text-align: center;
+        line-height: 18px; }
+  .mobile-menu .search {
+    padding-bottom: 20px; }
+    .mobile-menu .search input {
+      height: 35px;
+      padding: 0 20px;
+      display: inline-block; }
+    .mobile-menu .search .search-square {
+      width: 75%;
+      margin: 0 20px;
+      background-color: #fbfbfb;
+      border: 1px solid #efefef; }
+      @media (max-width: 940px) {
+        .mobile-menu .search .search-square {
+          width: 80%; } }
+    .mobile-menu .search .search-button {
+      width: 19%;
+      background-color: #ffffff;
+      border: 1px solid #b0b2b5;
+      color: #b0b2b5;
+      font-weight: bolder; }
+      @media (max-width: 1250px) {
+        .mobile-menu .search .search-button {
+          width: 17%; } }
+      @media (max-width: 940px) {
+        .mobile-menu .search .search-button {
+          width: 80%; } }
+      .mobile-menu .search .search-button:hover {
+        cursor: pointer; }
+
+/*********************
 STYLES
 *********************/
 body {
@@ -577,11 +707,28 @@ header {
   @media (max-width: 1250px) {
     header .navigation {
       padding: 0 30px; } }
+  @media (max-width: 940px) {
+    header .navigation {
+      padding: 0 30px; } }
+  @media (max-width: 940px) {
+    header .navigation .toggle-nav {
+      display: none !important; } }
+  header .navigation #toggle-a {
+    position: absolute;
+    right: 0;
+    line-height: 78px;
+    padding: 0px 30px; }
+    @media (min-width: 941px) {
+      header .navigation #toggle-a {
+        display: none; } }
   header .navigation .questions {
     display: inline-block; }
     header .navigation .questions h1 {
       display: inline-block;
       margin: 40px 0 20px 0; }
+      @media (max-width: 940px) {
+        header .navigation .questions h1 {
+          margin: 20px 0; } }
     header .navigation .questions .fa {
       color: #0266b3;
       margin: 0 20px;
@@ -655,6 +802,9 @@ header {
       border: 1px solid #b0b2b5;
       color: #b0b2b5;
       font-weight: bolder; }
+      @media (max-width: 1250px) {
+        header .search .search-button {
+          width: 17%; } }
       header .search .search-button:hover {
         cursor: pointer; }
 
@@ -671,6 +821,9 @@ main content
   @media (max-width: 1250px) {
     .main {
       margin: 157px 0 60px 0; } }
+  @media (max-width: 940px) {
+    .main {
+      margin: 78px 0 60px 0; } }
   .main .main-content {
     background-color: #ffffff;
     height: 100%;

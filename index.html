@@ -31,11 +31,12 @@
 <body>
 		<header>
 				<nav class="navigation container" role="navigation">
-					<div class="questions">
-						<a href="#"><h1>QUESTIONS</h1></a>
-						<a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
-					</div>
-					<div class="checkbox">
+						<div class="questions">
+							<a href="#"><h1>QUESTIONS</h1></a>
+							<a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+						</div>
+						<a id="toggle-a" href="#"><i class="fa fa-bars fa-2x" id="toggle-nav"></i></a>
+					<div class="checkbox toggle-nav">
 						<ul>
 							<li class="select-list">
 								<input type="radio" id="c1" name="cc" />
@@ -53,13 +54,48 @@
 							</li>
 						</ul>
 					</div>
-					<div class="search" id="searchButton">
+					<div class="search toggle-nav searchButton">
 						<form>
 							<span><input type="text" class="search-square" placeholder="Search questions"><input class="search-button" type="button" value="SEARCH"></span>
 						</form>
 					</div>
 				</nav>
 		</header>
+
+	<div class="mobile-menu">
+		<div class="checkbox toggle-nav">
+			<ul>
+				<li class="select-list">
+					<input type="radio" id="c1" name="cc" />
+					<label class="radio-label" for="c1">My shelf</label>
+				</li>
+				<li class="select-list">
+					<input type="radio" id="c2" name="cc" />
+					<label class="radio-label" for="c2">All questions</label>
+				</li>
+				<li class="sort-list">
+					<a href="#">recent</a>
+				</li>
+				<li class="sort-list">
+					<a href="#">hot</a>
+				</li>
+			</ul>
+		</div>
+		<div class="search toggle-nav searchButton">
+			<form>
+				<span>
+					<table>
+					<tr>
+					<td><input type="text" class="search-square" placeholder="Search questions"></td>
+					<td><input class="search-button" type="button" value="SEARCH"></span></td>
+					</tr>
+					</table>
+			</form>
+		</div>
+	</div>
+
+
+
 	<section class="main">
 		<div class="container main-content">
 				<div class="article-main" data-bind="foreach: headersCollection">
@@ -195,5 +231,6 @@
 	<script type="text/javascript" src="js/searchBar.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 	<script type="text/javascript" src="js/modal.js"></script>
+	<script type="text/javascript" src="js/mobileMenu.js"></script>
 	</body>
 </html>

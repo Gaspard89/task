@@ -1,0 +1,109 @@
+@import 'variables';
+.mobile-menu {
+  background-color: #373F51;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  left: -100%;
+  table {
+    width: 100%;
+  }
+.checkbox {
+  text-align: center;
+  padding: 5px;
+  font-size: 14px;
+  color: $white;
+  ul {
+    li:nth-child(3) a {
+      color: $dark-gray;
+      border-bottom: 1px solid;
+    }
+    li:nth-child(3):before {
+      content: "Sort by:";
+      font-style: italic;
+      padding: 0 20px;
+    }
+    li:nth-child(4) a {
+      color: $blue;
+      font-weight: bold;
+    }
+    li:nth-child(4):before {
+      content: "or";
+      padding-right: 20px;
+      font-style: italic;
+    }
+    .select-list {
+      display: inline;
+      padding: 0 10px;
+      label {
+          display: inline-block;
+          cursor: pointer;
+          position: relative;
+          padding-left: 25px;
+          font-weight: 500;
+      }
+        input[type=radio] {
+          display: none;
+      }
+        label:before {
+            content: "";
+            display: inline-block;
+
+            width: 16px;
+            height: 16px;
+            margin-right: 10px;
+            position: absolute;
+            left: 0;
+            bottom: 1px;
+            background-color: #fbfbfb;
+            border-radius: 25px;
+            border: 1px solid $dark-gray;
+        }
+        input[type=radio]:checked + label:before {
+            content: "\2022";
+            color: $black;
+            font-size: 30px;
+            text-align: center;
+            line-height: 18px;
+        }
+    }
+    .sort-list {
+      @extend .select-list;
+    }
+  }
+}
+
+.search {
+  padding-bottom: 20px;
+  input {
+    height: 35px;
+    padding: 0 20px;
+    display: inline-block;
+  }
+  .search-square {
+    width: 75%;
+    margin: 0 20px;
+    background-color: #fbfbfb;
+    border: 1px solid #efefef;
+    @include breakpoint(tablet) {
+      width: 80%;
+    }
+  }
+  .search-button {
+    width: 19%;
+    background-color: #ffffff;
+    border: 1px solid $dark-gray;
+    color: $dark-gray;
+    font-weight: bolder;
+    @include breakpoint(smallDesktop) {
+      width: 17%;
+    }
+    @include breakpoint(tablet) {
+      width: 80%;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+}

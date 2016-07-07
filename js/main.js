@@ -129,7 +129,7 @@ var answersCollection = [
     userName: "Patricia",
     active: "yesterday",
     answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempor velit leo, vel gravida nulla aliquet vitae. Aliquam non sodales risus, et egestas est. Fusce consequat porta nibh ac viverra.",
-    upvotes: "8",
+    upvotes: "<b>8</b>",
     button: ""
   },
   {
@@ -137,7 +137,7 @@ var answersCollection = [
     userName: "David",
     active: "yesterday",
     answer: "Donec malesuada sed turpis quis vulputate. Curabitur volutpat lacus in mauris tincidunt, quis vestibulum ante pharetra. Ut quis posuere nisi. Nam quis tincidunt orci.",
-    upvotes: "8",
+    upvotes: "<b>2</b>",
     button: "CONTINUE discussion"
   },
   {
@@ -145,7 +145,7 @@ var answersCollection = [
     userName: "Joseph's",
     active: "two days",
     answer: "Aenean ultricies augue odio, ut iaculis mi pretium dictum. Aenean faucibus gravida felis, at auctor risus vehicula in. Suspendisse ut ante erat. Donec venenatis fringilla tincidunt.",
-    upvotes: "8",
+    upvotes: "<b>3</b>",
     button: "COMMENT"
   }
 ];

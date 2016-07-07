@@ -48,6 +48,9 @@ MAIN - CONTENT
   margin: 91px 30px 60px 30px;
   background-color: #fbfbfb;
   height: auto;
+  @include breakpoint(smallDesktop) {
+    margin: 91px 0 60px 0;
+  }
   .main-content {
     box-shadow: none;
     background-color: $gray-background;
@@ -62,6 +65,17 @@ MAIN - CONTENT
     width: auto !important;
       img {
         border-radius: 50px;
+      }
+      h2 {
+        display: inline-block;
+      }
+      span {
+        display: inline-block;
+        position: relative;
+        padding-left: 150px;
+        font-weight: bold;
+        font-size: 20px;
+        font-family: 'Roboto', sans-serif;
       }
     }
     .single-question-details {
@@ -90,6 +104,7 @@ MAIN - CONTENT
                 text-align: center;
                 font-family: 'Lora', serif;
                 padding: 0 20px;
+                font-weight: bold;
               }
               .arrows {
                 display: block;
@@ -138,14 +153,19 @@ MAIN - CONTENT
 
     .answers-collection {
       margin: 10px 0 50px 0;
-      div:nth-child(1) {
+      .answer-main:nth-child(1) {
         margin-bottom: 0;
       }
-      div:nth-child(2) {
+      .answer-main:nth-child(2) {
         width: 80%;
         float: right;
+        @include breakpoint(tablet) {
+          width: 100%;
+          float: none;
+          border-left: 3px solid $dark-gray;
+        }
       }
-      div:nth-child(3) {
+      .answer-main:nth-child(3) {
         display: inline-flex;
       }
     .answer-main {
@@ -160,6 +180,9 @@ MAIN - CONTENT
       &:nth-of-type(2) {
         .answer-button {
           width: 75%;
+          @include breakpoint(tablet) {
+            width: 100%;
+          }
         }
       }
       .answer-image {
