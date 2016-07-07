@@ -17,6 +17,15 @@ I was able to apply RWD for two views, for "base" view and for "profile" view. U
 
 ###Task 3: Connect modal to users
 
-The user profile modal has been applied for all users on "base" view site. You can also display modal on the "single question" view but it does not contain any data. The reason is that all data in modal are downloaded from Knockout model and I could not apply multiple bindings...
+The user profile modal has been applied for users on "base" view site. You can also display modal on the "single question" view but it does not contain any data. The reason is that all data in modal are downloaded from Knockout model and I could not apply multiple bindings.
 
 ###Task 4: Use templates
+
+For this purpose I used Knockout JS. Despite the fact that I really would like to learn Angular I decided to choose Knockout because I had a chance to work with this UIs before. All data resides in main.js file. I tried to use templetes for almost every place that can hold varying content. As I wrote earlier I could not apply data from collections for modal in "single question" view because of multiple VieModel apply binding error.
+
+###Task 5: Add pagination and sorting
+:(
+
+###Task 6: Add search
+
+Search bar was made 
