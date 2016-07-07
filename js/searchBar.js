@@ -11,7 +11,7 @@ $(function(){
       var result = $(".search-square").val();
       console.log(result);
       if(result === "") {
-        // $(".article").css("display","block");
+        $(".article").css("display","block");
       }
       else {
         $(".article").css("display","none");

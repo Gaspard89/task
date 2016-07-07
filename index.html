@@ -2,7 +2,21 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Monterail task</title>
+	<meta name="description" content="Monterail technical review">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="robots" content="index, follow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--[if lt IE 8]>
+	<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+	<meta name="author" content="Kasper">
+	<meta name="copyright" content="monterail">
+	<meta name="keywords" content="monterail">
+	<meta name="google" content="notranslate">
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -48,7 +62,7 @@
 		</header>
 	<section class="main">
 		<div class="container main-content">
-				<div data-bind="foreach: headersCollection">
+				<div class="article-main" data-bind="foreach: headersCollection">
 					<div class="article">
 						<div class="article-head">
 						  <div class="profile-btn" data-bind="html: imageUri"></div>
@@ -61,7 +75,7 @@
 							<div data-bind="if: $index() === 0 && $parent.commentedUriCollection.length > 3">
 								<div class="activities">
 									<p class="activities-counter">3</p>
-									<span class="activities-span">more activities</span>
+									<span class="activities-span">more<br>activities</span>
 								</div>
 							</div>
 							<div class="article-users">
@@ -176,6 +190,5 @@
 	<script type="text/javascript" src="js/searchBar.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 	<script type="text/javascript" src="js/modal.js"></script>
-	</script>
 	</body>
 </html>
