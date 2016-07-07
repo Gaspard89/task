@@ -80,23 +80,51 @@ HEADER
     .modal .modal-content .profile-details {
       display: flex;
       justify-content: space-between;
+      -webkit-justify-content: space-between;
+      /* Safari */
       margin: 20px 0; }
-      .modal .modal-content .profile-details span:nth-child(1):before, .modal .modal-content .profile-details span:nth-child(2):before, .modal .modal-content .profile-details span:nth-child(3):before {
+      @media (max-width: 940px) {
+        .modal .modal-content .profile-details {
+          -webkit-flex-direction: column;
+          /* Safari */
+          flex-direction: column; } }
+      @media (max-width: 940px) {
+        .modal .modal-content .profile-details span {
+          text-align: center;
+          padding: 10px 0;
+          -webkit-justify-content: center;
+          /* Safari */
+          justify-content: center; } }
+      .modal .modal-content .profile-details span:nth-child(1):before, .modal .modal-content .profile-details span:nth-child(2):before {
         content: "MEMBER FOR";
         padding: 0 10px;
         color: #b0b2b5; }
+        @media (max-width: 940px) {
+          .modal .modal-content .profile-details span:nth-child(1):before, .modal .modal-content .profile-details span:nth-child(2):before {
+            display: block;
+            padding-bottom: 10px; } }
       .modal .modal-content .profile-details span:nth-child(2):before {
         content: "LAST SEEN"; }
+        @media (max-width: 940px) {
+          .modal .modal-content .profile-details span:nth-child(2):before {
+            display: block;
+            padding-bottom: 10px; } }
       .modal .modal-content .profile-details span:nth-child(3) {
         align-items: flex-start;
         display: flex; }
+        @media (max-width: 940px) {
+          .modal .modal-content .profile-details span:nth-child(3) {
+            display: block; } }
         .modal .modal-content .profile-details span:nth-child(3) i {
           padding: 0 5px;
           color: #f98b81; }
         .modal .modal-content .profile-details span:nth-child(3) #last-child {
           color: #b0b2b5; }
         .modal .modal-content .profile-details span:nth-child(3):before {
-          content: "ACTIVITY LEVEL"; }
+          color: #b0b2b5;
+          content: "ACTIVITY LEVEL";
+          display: block;
+          padding-bottom: 10px; }
 
 /*********************
 MAIN CONTENT
@@ -107,7 +135,8 @@ MAIN CONTENT
   align-items: center;
   justify-content: space-between; }
   .profile-switch h1 {
-    font-family: 'Lora', serif; }
+    font-family: 'Lora', serif;
+    text-align: center; }
   .profile-switch span i {
     color: #b0b2b5; }
     .profile-switch span i:hover {
@@ -118,78 +147,91 @@ MAIN CONTENT
       transition: color 0.3s ease;
       color: #0266b3; }
 
-.profile-stats {
+.profile-stats-outer {
   display: flex;
-  justify-content: center;
-  margin: 25px 0 50px 0; }
-  .profile-stats .profile-stats-details {
-    background-color: #dff3fd;
-    display: table;
-    width: 130px;
-    height: 130px;
-    margin: 0 15px; }
-    .profile-stats .profile-stats-details .cell {
-      display: table-cell;
-      text-align: center;
-      vertical-align: middle; }
-      .profile-stats .profile-stats-details .cell span {
-        font-size: 28px;
-        font-weight: bold; }
-      .profile-stats .profile-stats-details .cell p {
-        font-family: 'Lora', serif;
-        font-size: 18px; }
-  .profile-stats .profile-peers {
-    -webkit-transform: rotate(65deg);
-    -moz-transform: rotate(65deg);
-    -ms-transform: rotate(65deg);
-    -o-transform: rotate(65deg);
-    transform: rotate(65deg); }
-    .profile-stats .profile-peers .cell {
-      -webkit-transform: rotate(-65deg);
-      -moz-transform: rotate(-65deg);
-      -ms-transform: rotate(-65deg);
-      -o-transform: rotate(-65deg);
-      transform: rotate(-65deg); }
-  .profile-stats .profile-discussions {
-    -webkit-transform: rotate(-10deg);
-    -moz-transform: rotate(-10deg);
-    -ms-transform: rotate(-10deg);
-    -o-transform: rotate(-10deg);
-    transform: rotate(-10deg); }
-    .profile-stats .profile-discussions .cell {
-      -webkit-transform: rotate(10deg);
-      -moz-transform: rotate(10deg);
-      -ms-transform: rotate(10deg);
-      -o-transform: rotate(10deg);
-      transform: rotate(10deg); }
-  .profile-stats .profile-findings {
-    -webkit-transform: rotate(50deg);
-    -moz-transform: rotate(50deg);
-    -ms-transform: rotate(50deg);
-    -o-transform: rotate(50deg);
-    transform: rotate(50deg); }
-    .profile-stats .profile-findings .cell {
-      -webkit-transform: rotate(-50deg);
-      -moz-transform: rotate(-50deg);
-      -ms-transform: rotate(-50deg);
-      -o-transform: rotate(-50deg);
-      transform: rotate(-50deg); }
-  .profile-stats .profile-questions {
-    -webkit-transform: rotate(20deg);
-    -moz-transform: rotate(20deg);
-    -ms-transform: rotate(20deg);
-    -o-transform: rotate(20deg);
-    transform: rotate(20deg); }
-    .profile-stats .profile-questions .cell {
-      -webkit-transform: rotate(-20deg);
-      -moz-transform: rotate(-20deg);
-      -ms-transform: rotate(-20deg);
-      -o-transform: rotate(-20deg);
-      transform: rotate(-20deg); }
+  justify-content: center; }
+  @media (max-width: 940px) {
+    .profile-stats-outer {
+      display: block; } }
+  .profile-stats-outer .profile-stats {
+    display: flex;
+    justify-content: center;
+    margin: 25px 0 50px 0;
+    -webkit-flex-flow: row wrap;
+    /* Safari */
+    flex-flow: row wrap; }
+    .profile-stats-outer .profile-stats .profile-stats-details {
+      background-color: #dff3fd;
+      display: table;
+      width: 130px;
+      height: 130px;
+      margin: 0 15px; }
+      .profile-stats-outer .profile-stats .profile-stats-details .cell {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle; }
+        .profile-stats-outer .profile-stats .profile-stats-details .cell span {
+          font-size: 28px;
+          font-weight: bold; }
+        .profile-stats-outer .profile-stats .profile-stats-details .cell p {
+          font-family: 'Lora', serif;
+          font-size: 18px; }
+    .profile-stats-outer .profile-stats .profile-peers {
+      -webkit-transform: rotate(65deg);
+      -moz-transform: rotate(65deg);
+      -ms-transform: rotate(65deg);
+      -o-transform: rotate(65deg);
+      transform: rotate(65deg); }
+      .profile-stats-outer .profile-stats .profile-peers .cell {
+        -webkit-transform: rotate(-65deg);
+        -moz-transform: rotate(-65deg);
+        -ms-transform: rotate(-65deg);
+        -o-transform: rotate(-65deg);
+        transform: rotate(-65deg); }
+    .profile-stats-outer .profile-stats .profile-discussions {
+      -webkit-transform: rotate(-10deg);
+      -moz-transform: rotate(-10deg);
+      -ms-transform: rotate(-10deg);
+      -o-transform: rotate(-10deg);
+      transform: rotate(-10deg); }
+      .profile-stats-outer .profile-stats .profile-discussions .cell {
+        -webkit-transform: rotate(10deg);
+        -moz-transform: rotate(10deg);
+        -ms-transform: rotate(10deg);
+        -o-transform: rotate(10deg);
+        transform: rotate(10deg); }
+    .profile-stats-outer .profile-stats .profile-findings {
+      -webkit-transform: rotate(50deg);
+      -moz-transform: rotate(50deg);
+      -ms-transform: rotate(50deg);
+      -o-transform: rotate(50deg);
+      transform: rotate(50deg); }
+      .profile-stats-outer .profile-stats .profile-findings .cell {
+        -webkit-transform: rotate(-50deg);
+        -moz-transform: rotate(-50deg);
+        -ms-transform: rotate(-50deg);
+        -o-transform: rotate(-50deg);
+        transform: rotate(-50deg); }
+    .profile-stats-outer .profile-stats .profile-questions {
+      -webkit-transform: rotate(20deg);
+      -moz-transform: rotate(20deg);
+      -ms-transform: rotate(20deg);
+      -o-transform: rotate(20deg);
+      transform: rotate(20deg); }
+      .profile-stats-outer .profile-stats .profile-questions .cell {
+        -webkit-transform: rotate(-20deg);
+        -moz-transform: rotate(-20deg);
+        -ms-transform: rotate(-20deg);
+        -o-transform: rotate(-20deg);
+        transform: rotate(-20deg); }
 
 .joined-users {
   display: flex;
   justify-content: center; }
+  @media (max-width: 680px) {
+    .joined-users img {
+      width: 80px;
+      height: 80px; } }
   .joined-users .joined-profiles .joined-image {
     padding: 25px;
     background: repeating-linear-gradient(45deg, #eeeeee, #eeeeee 2px, #ffffff 2px, #ffffff 4px);
@@ -204,10 +246,15 @@ MAIN CONTENT
 
 .hottest {
   background: repeating-linear-gradient(45deg, #eeeeee, #eeeeee 2px, #ffffff 2px, #ffffff 4px);
-  margin: 50px 0 30px 0; }
+  margin-top: 50px; }
   .hottest .hottest-image {
     position: relative;
     top: -50px; }
+    @media (max-width: 680px) {
+      .hottest .hottest-image {
+        width: 80px;
+        height: 80px;
+        top: -40px; } }
   .hottest .pusher {
     margin-top: -30px; }
   .hottest .hottest-username {
@@ -227,7 +274,9 @@ MAIN CONTENT
     font-family: 'Lora', serif; }
   .hottest .topic-stats {
     display: flex;
-    justify-content: center; }
+    justify-content: center;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap; }
     .hottest .topic-stats .stat-item {
       text-align: center;
       padding: 20px;

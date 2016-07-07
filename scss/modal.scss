@@ -64,19 +64,43 @@ HEADER
         .profile-details {
           display: flex;
           justify-content: space-between;
+          -webkit-justify-content: space-between; /* Safari */
           margin: 20px 0;
+          @include breakpoint(tablet) {
+            -webkit-flex-direction: column; /* Safari */
+            flex-direction: column;
+          }
+          span {
+            @include breakpoint(tablet) {
+              text-align: center;
+              padding: 10px 0;
+              -webkit-justify-content: center; /* Safari */
+              justify-content: center;
+            }
+          }
           span:nth-child(1):before {
             content: "MEMBER FOR";
             padding: 0 10px;
-            color: #b0b2b5;
+            color: $dark-gray;
+            @include breakpoint(tablet) {
+              display: block;
+              padding-bottom: 10px;
+            }
           }
           span:nth-child(2):before {
             @extend span:nth-child(1):before;
             content: "LAST SEEN";
+            @include breakpoint(tablet) {
+              display: block;
+              padding-bottom: 10px;
+            }
           }
           span:nth-child(3){
             align-items: flex-start;
             display: flex;
+            @include breakpoint(tablet) {
+              display: block;
+            }
             i {
               padding: 0 5px;
               color: #f98b81;
@@ -85,8 +109,10 @@ HEADER
               color: #b0b2b5;
             }
             &:before {
-                @extend span:nth-child(1):before;
+                color: $dark-gray;
                 content: "ACTIVITY LEVEL";
+                display: block;
+                padding-bottom: 10px;
               }
           }
         }
@@ -103,6 +129,7 @@ MAIN CONTENT
       justify-content: space-between;
       h1 {
         font-family: 'Lora', serif;
+        text-align: center;
       }
       span i{
         color: #b0b2b5;
@@ -112,11 +139,18 @@ MAIN CONTENT
         }
       }
 }
-
+.profile-stats-outer {
+  display: flex;
+  justify-content: center;
+  @include breakpoint(tablet) {
+    display: block;
+  }
 .profile-stats {
   display: flex;
   justify-content: center;
   margin: 25px 0 50px 0;
+  -webkit-flex-flow: row wrap; /* Safari */
+  flex-flow: row wrap;
   .profile-stats-details  {
     background-color: $light-blue;
     display: table;
@@ -162,10 +196,16 @@ MAIN CONTENT
     }
   }
 }
-
+}
 .joined-users {
   display: flex;
   justify-content: center;
+  @include breakpoint(smallBreak) {
+    img {
+      width: 80px;
+      height: 80px;
+    }
+  }
   .joined-profiles {
     .joined-image {
       padding: 25px;
@@ -185,10 +225,15 @@ MAIN CONTENT
 
 .hottest {
   background: repeating-linear-gradient( 45deg, $light-gray, $light-gray 2px, #ffffff 2px, #ffffff 4px );
-  margin: 50px 0 30px 0;
+  margin-top: 50px;
   .hottest-image {
     position: relative;
     top: -50px;
+    @include breakpoint(smallBreak) {
+        width: 80px;
+        height: 80px;
+        top: -40px;
+    }
   }
   .pusher {
     margin-top: -30px;
@@ -214,6 +259,8 @@ MAIN CONTENT
   .topic-stats {
     display: flex;
     justify-content: center;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
     .stat-item {
       text-align: center;
       padding: 20px;
